@@ -1,0 +1,117 @@
+{
+  "campaign": "plate_B_3x3_fluorescence",
+  "settings": {
+    "exposure_ms": 30,
+    "intensity": 20
+  },
+  "summary": [
+    {
+      "well": "B11",
+      "frames": 9,
+      "mean_bright_fraction": 0.013471,
+      "max_bright_fraction": 0.020811,
+      "frames_detail": [
+        {
+          "file": "fluorescence\\B\\B11\\20260930T212310652689Z_dx-0.5_dy-0.5_Fluorescence_488_nm_Ex.png",
+          "bright_fraction": 0.011243,
+          "near_white_fraction": 0.010096
+        },
+        {
+          "file": "fluorescence\\B\\B11\\20260930T212439268409Z_dx0_dy-0.5_Fluorescence_488_nm_Ex.png",
+          "bright_fraction": 0.012484,
+          "near_white_fraction": 0.010242
+        },
+        {
+          "file": "fluorescence\\B\\B11\\20260930T212449084363Z_dx0.5_dy-0.5_Fluorescence_488_nm_Ex.png",
+          "bright_fraction": 0.012895,
+          "near_white_fraction": 0.0103
+        },
+        {
+          "file": "fluorescence\\B\\B11\\20260930T212453694245Z_dx-0.5_dy0_Fluorescence_488_nm_Ex.png",
+          "bright_fraction": 0.015011,
+          "near_white_fraction": 0.010431
+        },
+        {
+          "file": "fluorescence\\B\\B11\\20260930T212503836312Z_dx0_dy0_Fluorescence_488_nm_Ex.png",
+          "bright_fraction": 0.012702,
+          "near_white_fraction": 0.010356
+        },
+        {
+          "file": "fluorescence\\B\\B11\\20260930T212507325175Z_dx0.5_dy0_Fluorescence_488_nm_Ex.png",
+          "bright_fraction": 0.020811,
+          "near_white_fraction": 0.011017
+        },
+        {
+          "file": "fluorescence\\B\\B11\\20260930T212511103109Z_dx-0.5_dy0.5_Fluorescence_488_nm_Ex.png",
+          "bright_fraction": 0.011999,
+          "near_white_fraction": 0.010113
+        },
+        {
+          "file": "fluorescence\\B\\B11\\20260930T212514775815Z_dx0_dy0.5_Fluorescence_488_nm_Ex.png",
+          "bright_fraction": 0.011355,
+          "near_white_fraction": 0.010302
+        },
+        {
+          "file": "fluorescence\\B\\B11\\20260930T212518372639Z_dx0.5_dy0.5_Fluorescence_488_nm_Ex.png",
+          "bright_fraction": 0.012741,
+          "near_white_fraction": 0.010202
+        }
+      ]
+    },
+    {
+      "well": "B12",
+      "frames": 9,
+      "mean_bright_fraction": 0.016106,
+      "max_bright_fraction": 0.020559,
+      "frames_detail": [
+        {
+          "file": "fluorescence\\B\\B12\\20260930T212525228502Z_dx-0.5_dy-0.5_Fluorescence_488_nm_Ex.png",
+          "bright_fraction": 0.012687,
+          "near_white_fraction": 0.010232
+        },
+        {
+          "file": "fluorescence\\B\\B12\\20260930T212528834856Z_dx0_dy-0.5_Fluorescence_488_nm_Ex.png",
+          "bright_fraction": 0.01262,
+          "near_white_fraction": 0.010173
+        },
+        {
+          "file": "fluorescence\\B\\B12\\20260930T212532387918Z_dx0.5_dy-0.5_Fluorescence_488_nm_Ex.png",
+          "bright_fraction": 0.015431,
+          "near_white_fraction": 0.010424
+        },
+        {
+          "file": "fluorescence\\B\\B12\\20260930T212535924748Z_dx-0.5_dy0_Fluorescence_488_nm_Ex.png",
+          "bright_fraction": 0.018568,
+          "near_white_fraction": 0.010456
+        },
+        {
+          "file": "fluorescence\\B\\B12\\20260930T212539448443Z_dx0_dy0_Fluorescence_488_nm_Ex.png",
+          "bright_fraction": 0.020085,
+          "near_white_fraction": 0.010227
+        },
+        {
+          "file": "fluorescence\\B\\B12\\20260930T212542852998Z_dx0.5_dy0_Fluorescence_488_nm_Ex.png",
+          "bright_fraction": 0.020233,
+          "near_white_fraction": 0.01036
+        },
+        {
+          "file": "fluorescence\\B\\B12\\20260930T212546480605Z_dx-0.5_dy0.5_Fluorescence_488_nm_Ex.png",
+          "bright_fraction": 0.011764,
+          "near_white_fraction": 0.010077
+        },
+        {
+          "file": "fluorescence\\B\\B12\\20260930T212549170118Z_dx0_dy0.5_Fluorescence_488_nm_Ex.png",
+          "bright_fraction": 0.013003,
+          "near_white_fraction": 0.010235
+        },
+        {
+          "file": "fluorescence\\B\\B12\\20260930T212553305673Z_dx0.5_dy0.5_Fluorescence_488_nm_Ex.png",
+          "bright_fraction": 0.020559,
+          "near_white_fraction": 0.010642
+        }
+      ]
+    }
+  ],
+  "interpretation": "Bright-pixel fractions are screening metrics from full-resolution images. Confirm photosynthetic identity by visual comparison with brightfield; autofluorescent debris can also be bright.",
+  "scale_policy": "Use status-derived full-resolution scale; do not measure from thumbnails."
+}

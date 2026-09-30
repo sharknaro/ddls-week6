@@ -1,0 +1,89 @@
+{
+  "experiment": "step_size_and_fluorescence_optimization",
+  "well": "B11",
+  "plate": "A",
+  "scale": {
+    "pixel_size_um": 0.376,
+    "fov_um": [
+      783.6,
+      783.6
+    ]
+  },
+  "step_size_recommendation": {
+    "coarse_step": 0.5,
+    "refinement_step": 0.25,
+    "rationale": "The 0.5 pilot provides broad coverage; use 0.25 around dense fields. No image-derived quantitative overlap was claimed."
+  },
+  "fluorescence_metrics": [
+    {
+      "channel": "Fluorescence_488_nm_Ex",
+      "exposure_ms": 10,
+      "intensity": 20,
+      "mean_fullres": 37.25,
+      "p95_fullres": 133,
+      "near_white_fraction": 0.010286,
+      "position_mm": {
+        "x": 95.99929999999999,
+        "y": 19.999325,
+        "z": 5.4215625
+      },
+      "timestamp_utc": "20260930T204201018406Z"
+    },
+    {
+      "channel": "Fluorescence_488_nm_Ex",
+      "exposure_ms": 20,
+      "intensity": 20,
+      "mean_fullres": 36.88,
+      "p95_fullres": 133,
+      "near_white_fraction": 0.010263,
+      "position_mm": {
+        "x": 95.99929999999999,
+        "y": 19.999325,
+        "z": 5.4215625
+      },
+      "timestamp_utc": "20260930T204204570193Z"
+    },
+    {
+      "channel": "Fluorescence_488_nm_Ex",
+      "exposure_ms": 30,
+      "intensity": 20,
+      "mean_fullres": 36.45,
+      "p95_fullres": 131,
+      "near_white_fraction": 0.010275,
+      "position_mm": {
+        "x": 95.99929999999999,
+        "y": 19.999325,
+        "z": 5.4215625
+      },
+      "timestamp_utc": "20260930T204208058703Z"
+    },
+    {
+      "channel": "Fluorescence_488_nm_Ex",
+      "exposure_ms": 50,
+      "intensity": 20,
+      "mean_fullres": 37.15,
+      "p95_fullres": 134,
+      "near_white_fraction": 0.010335,
+      "position_mm": {
+        "x": 95.99929999999999,
+        "y": 19.999325,
+        "z": 5.4215625
+      },
+      "timestamp_utc": "20260930T204211544893Z"
+    }
+  ],
+  "visual_assessment": {
+    "fluorescence": "The exposure ladder should be reviewed alongside the thumbnails; retain the lowest setting showing localized organism-associated signal without broad clipping.",
+    "recommended_start": "30 ms x 20, then reduce exposure if saturated.",
+    "paired_channels": "BF1/FL/BF2 were acquired at the same dx/dy and should be compared using matching z values.",
+    "measurement_policy": "Metrics above were computed from full-resolution PNGs. Thumbnail pixels were used only for visual inspection."
+  },
+  "ralph_parameters": {
+    "step_coarse": 0.5,
+    "step_refinement": 0.25,
+    "fluorescence_exposure_ms": 30,
+    "fluorescence_intensity": 20,
+    "brightfield_exposure_ms": 20,
+    "brightfield_intensity": 20
+  }
+}

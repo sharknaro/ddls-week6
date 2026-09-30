@@ -1,0 +1,713 @@
+{
+  "plate": "B",
+  "plate_barcode": "PD260929CTB",
+  "channel": "Fluorescence_488_nm_Ex",
+  "exposure_ms": 30,
+  "intensity": 20,
+  "coordinates": [
+    [
+      -0.5,
+      -0.5
+    ],
+    [
+      0,
+      -0.5
+    ],
+    [
+      0.5,
+      -0.5
+    ],
+    [
+      -0.5,
+      0
+    ],
+    [
+      0,
+      0
+    ],
+    [
+      0.5,
+      0
+    ],
+    [
+      -0.5,
+      0.5
+    ],
+    [
+      0,
+      0.5
+    ],
+    [
+      0.5,
+      0.5
+    ]
+  ],
+  "wells": {
+    "B11": {
+      "pixel_size_um": 0.376,
+      "fov_um": [
+        783.6,
+        783.6
+      ],
+      "focus": {
+        "ok": true,
+        "well": "B11",
+        "host": "squid+4",
+        "plate": "PD260929CTB",
+        "plate_letter": "B",
+        "your_plate_counts": {
+          "squid+3": 55,
+          "squid+4": 37
+        },
+        "result": {
+          "ok": true,
+          "reference_warnings": [
+            {
+              "code": "af_reference_unvalidated_no_validator",
+              "message": "the stored AF reference was never shown to be at focus (recorded before set-time validation existed). Laser AF reproduces whatever plane it was given, so a soft reference yields soft data on every well with no error raised. NOTE: this server cannot yet validate a reference at set time (#0069 sweep not wired), so this is reported as a WARNING rather than refused \u2014 refusing would demand proof no code path can produce, leaving no way to clear it"
+            }
+          ]
+        },
+        "took_ms": 4205.5,
+        "position_mm": {
+          "x": 95.77308124999999,
+          "y": 18.811875,
+          "z": 3.4595625
+        },
+        "your_z_is_restored_on_snap": true
+      },
+      "frames": [
+        {
+          "well": "B11",
+          "plate": "B",
+          "dx": -0.5,
+          "dy": -0.5,
+          "channel": "Fluorescence_488_nm_Ex",
+          "exposure_ms": 30,
+          "intensity": 20,
+          "pixel_size_um": 0.376,
+          "fov_um": [
+            783.6,
+            783.6
+          ],
+          "timestamp_utc": "20260930T212310652689Z",
+          "full_resolution": "fluorescence\\B\\B11\\20260930T212310652689Z_dx-0.5_dy-0.5_Fluorescence_488_nm_Ex.png",
+          "thumbnail": "fluorescence\\B\\B11\\20260930T212310652689Z_dx-0.5_dy-0.5_Fluorescence_488_nm_Ex_thumb.png",
+          "image_id": "c2fe2f3ef836d846",
+          "position_mm": {
+            "x": 94.22050625,
+            "y": 17.2593,
+            "z": 3.4595625
+          },
+          "light_budget": {
+            "well_used": 12400.0,
+            "well_budget": 200000.0,
+            "well_remaining": 187600.0,
+            "well_frames_left_at_this_setting": 312,
+            "host_on_time_s": 3.3,
+            "host_on_time_budget_s": 1800.0
+          },
+          "width": 2084,
+          "height": 2084
+        },
+        {
+          "well": "B11",
+          "plate": "B",
+          "dx": 0,
+          "dy": -0.5,
+          "channel": "Fluorescence_488_nm_Ex",
+          "exposure_ms": 30,
+          "intensity": 20,
+          "pixel_size_um": 0.376,
+          "fov_um": [
+            783.6,
+            783.6
+          ],
+          "timestamp_utc": "20260930T212439268409Z",
+          "full_resolution": "fluorescence\\B\\B11\\20260930T212439268409Z_dx0_dy-0.5_Fluorescence_488_nm_Ex.png",
+          "thumbnail": "fluorescence\\B\\B11\\20260930T212439268409Z_dx0_dy-0.5_Fluorescence_488_nm_Ex_thumb.png",
+          "image_id": "69550416532606c3",
+          "position_mm": {
+            "x": 95.77308124999999,
+            "y": 17.2593,
+            "z": 3.4595625
+          },
+          "light_budget": {
+            "well_used": 15400.0,
+            "well_budget": 200000.0,
+            "well_remaining": 184600.0,
+            "well_frames_left_at_this_setting": 307,
+            "host_on_time_s": 3.4,
+            "host_on_time_budget_s": 1800.0
+          },
+          "width": 2084,
+          "height": 2084
+        },
+        {
+          "well": "B11",
+          "plate": "B",
+          "dx": 0.5,
+          "dy": -0.5,
+          "channel": "Fluorescence_488_nm_Ex",
+          "exposure_ms": 30,
+          "intensity": 20,
+          "pixel_size_um": 0.376,
+          "fov_um": [
+            783.6,
+            783.6
+          ],
+          "timestamp_utc": "20260930T212449084363Z",
+          "full_resolution": "fluorescence\\B\\B11\\20260930T212449084363Z_dx0.5_dy-0.5_Fluorescence_488_nm_Ex.png",
+          "thumbnail": "fluorescence\\B\\B11\\20260930T212449084363Z_dx0.5_dy-0.5_Fluorescence_488_nm_Ex_thumb.png",
+          "image_id": "b3cab8ea46823b98",
+          "position_mm": {
+            "x": 97.3248625,
+            "y": 17.2593,
+            "z": 3.4595625
+          },
+          "light_budget": {
+            "well_used": 16000.0,
+            "well_budget": 200000.0,
+            "well_remaining": 184000.0,
+            "well_frames_left_at_this_setting": 306,
+            "host_on_time_s": 3.5,
+            "host_on_time_budget_s": 1800.0
+          },
+          "width": 2084,
+          "height": 2084
+        },
+        {
+          "well": "B11",
+          "plate": "B",
+          "dx": -0.5,
+          "dy": 0,
+          "channel": "Fluorescence_488_nm_Ex",
+          "exposure_ms": 30,
+          "intensity": 20,
+          "pixel_size_um": 0.376,
+          "fov_um": [
+            783.6,
+            783.6
+          ],
+          "timestamp_utc": "20260930T212453694245Z",
+          "full_resolution": "fluorescence\\B\\B11\\20260930T212453694245Z_dx-0.5_dy0_Fluorescence_488_nm_Ex.png",
+          "thumbnail": "fluorescence\\B\\B11\\20260930T212453694245Z_dx-0.5_dy0_Fluorescence_488_nm_Ex_thumb.png",
+          "image_id": "5619b05bd9088c4d",
+          "position_mm": {
+            "x": 94.22050625,
+            "y": 18.811875,
+            "z": 3.4595625
+          },
+          "light_budget": {
+            "well_used": 16600.0,
+            "well_budget": 200000.0,
+            "well_remaining": 183400.0,
+            "well_frames_left_at_this_setting": 305,
+            "host_on_time_s": 3.5,
+            "host_on_time_budget_s": 1800.0
+          },
+          "width": 2084,
+          "height": 2084
+        },
+        {
+          "well": "B11",
+          "plate": "B",
+          "dx": 0,
+          "dy": 0,
+          "channel": "Fluorescence_488_nm_Ex",
+          "exposure_ms": 30,
+          "intensity": 20,
+          "pixel_size_um": 0.376,
+          "fov_um": [
+            783.6,
+            783.6
+          ],
+          "timestamp_utc": "20260930T212503836312Z",
+          "full_resolution": "fluorescence\\B\\B11\\20260930T212503836312Z_dx0_dy0_Fluorescence_488_nm_Ex.png",
+          "thumbnail": "fluorescence\\B\\B11\\20260930T212503836312Z_dx0_dy0_Fluorescence_488_nm_Ex_thumb.png",
+          "image_id": "057adf923d526982",
+          "position_mm": {
+            "x": 95.77308124999999,
+            "y": 18.811875,
+            "z": 3.4595625
+          },
+          "light_budget": {
+            "well_used": 17200.0,
+            "well_budget": 200000.0,
+            "well_remaining": 182800.0,
+            "well_frames_left_at_this_setting": 304,
+            "host_on_time_s": 3.5,
+            "host_on_time_budget_s": 1800.0
+          },
+          "width": 2084,
+          "height": 2084
+        },
+        {
+          "well": "B11",
+          "plate": "B",
+          "dx": 0.5,
+          "dy": 0,
+          "channel": "Fluorescence_488_nm_Ex",
+          "exposure_ms": 30,
+          "intensity": 20,
+          "pixel_size_um": 0.376,
+          "fov_um": [
+            783.6,
+            783.6
+          ],
+          "timestamp_utc": "20260930T212507325175Z",
+          "full_resolution": "fluorescence\\B\\B11\\20260930T212507325175Z_dx0.5_dy0_Fluorescence_488_nm_Ex.png",
+          "thumbnail": "fluorescence\\B\\B11\\20260930T212507325175Z_dx0.5_dy0_Fluorescence_488_nm_Ex_thumb.png",
+          "image_id": "9e628e3b5eab81cb",
+          "position_mm": {
+            "x": 97.3248625,
+            "y": 18.811875,
+            "z": 3.4595625
+          },
+          "light_budget": {
+            "well_used": 17800.0,
+            "well_budget": 200000.0,
+            "well_remaining": 182200.0,
+            "well_frames_left_at_this_setting": 303,
+            "host_on_time_s": 3.5,
+            "host_on_time_budget_s": 1800.0
+          },
+          "width": 2084,
+          "height": 2084
+        },
+        {
+          "well": "B11",
+          "plate": "B",
+          "dx": -0.5,
+          "dy": 0.5,
+          "channel": "Fluorescence_488_nm_Ex",
+          "exposure_ms": 30,
+          "intensity": 20,
+          "pixel_size_um": 0.376,
+          "fov_um": [
+            783.6,
+            783.6
+          ],
+          "timestamp_utc": "20260930T212511103109Z",
+          "full_resolution": "fluorescence\\B\\B11\\20260930T212511103109Z_dx-0.5_dy0.5_Fluorescence_488_nm_Ex.png",
+          "thumbnail": "fluorescence\\B\\B11\\20260930T212511103109Z_dx-0.5_dy0.5_Fluorescence_488_nm_Ex_thumb.png",
+          "image_id": "fada8de3ad8d0dcb",
+          "position_mm": {
+            "x": 94.22050625,
+            "y": 20.364449999999998,
+            "z": 3.4595625
+          },
+          "light_budget": {
+            "well_used": 18400.0,
+            "well_budget": 200000.0,
+            "well_remaining": 181600.0,
+            "well_frames_left_at_this_setting": 302,
+            "host_on_time_s": 3.6,
+            "host_on_time_budget_s": 1800.0
+          },
+          "width": 2084,
+          "height": 2084
+        },
+        {
+          "well": "B11",
+          "plate": "B",
+          "dx": 0,
+          "dy": 0.5,
+          "channel": "Fluorescence_488_nm_Ex",
+          "exposure_ms": 30,
+          "intensity": 20,
+          "pixel_size_um": 0.376,
+          "fov_um": [
+            783.6,
+            783.6
+          ],
+          "timestamp_utc": "20260930T212514775815Z",
+          "full_resolution": "fluorescence\\B\\B11\\20260930T212514775815Z_dx0_dy0.5_Fluorescence_488_nm_Ex.png",
+          "thumbnail": "fluorescence\\B\\B11\\20260930T212514775815Z_dx0_dy0.5_Fluorescence_488_nm_Ex_thumb.png",
+          "image_id": "7febca1dbd187026",
+          "position_mm": {
+            "x": 95.77308124999999,
+            "y": 20.364449999999998,
+            "z": 3.4595625
+          },
+          "light_budget": {
+            "well_used": 19000.0,
+            "well_budget": 200000.0,
+            "well_remaining": 181000.0,
+            "well_frames_left_at_this_setting": 301,
+            "host_on_time_s": 3.6,
+            "host_on_time_budget_s": 1800.0
+          },
+          "width": 2084,
+          "height": 2084
+        },
+        {
+          "well": "B11",
+          "plate": "B",
+          "dx": 0.5,
+          "dy": 0.5,
+          "channel": "Fluorescence_488_nm_Ex",
+          "exposure_ms": 30,
+          "intensity": 20,
+          "pixel_size_um": 0.376,
+          "fov_um": [
+            783.6,
+            783.6
+          ],
+          "timestamp_utc": "20260930T212518372639Z",
+          "full_resolution": "fluorescence\\B\\B11\\20260930T212518372639Z_dx0.5_dy0.5_Fluorescence_488_nm_Ex.png",
+          "thumbnail": "fluorescence\\B\\B11\\20260930T212518372639Z_dx0.5_dy0.5_Fluorescence_488_nm_Ex_thumb.png",
+          "image_id": "b9a06dd4ea86208c",
+          "position_mm": {
+            "x": 97.3248625,
+            "y": 20.364449999999998,
+            "z": 3.4595625
+          },
+          "light_budget": {
+            "well_used": 19600.0,
+            "well_budget": 200000.0,
+            "well_remaining": 180400.0,
+            "well_frames_left_at_this_setting": 300,
+            "host_on_time_s": 3.6,
+            "host_on_time_budget_s": 1800.0
+          },
+          "width": 2084,
+          "height": 2084
+        }
+      ]
+    },
+    "B12": {
+      "pixel_size_um": 0.376,
+      "fov_um": [
+        783.6,
+        783.6
+      ],
+      "focus": {
+        "ok": true,
+        "well": "B12",
+        "host": "squid+4",
+        "plate": "PD260929CTB",
+        "plate_letter": "B",
+        "your_plate_counts": {
+          "squid+3": 55,
+          "squid+4": 52
+        },
+        "result": {
+          "ok": true,
+          "reference_warnings": [
+            {
+              "code": "af_reference_unvalidated_no_validator",
+              "message": "the stored AF reference was never shown to be at focus (recorded before set-time validation existed). Laser AF reproduces whatever plane it was given, so a soft reference yields soft data on every well with no error raised. NOTE: this server cannot yet validate a reference at set time (#0069 sweep not wired), so this is reported as a WARNING rather than refused \u2014 refusing would demand proof no code path can produce, leaving no way to clear it"
+            }
+          ]
+        },
+        "took_ms": 1745.0,
+        "position_mm": {
+          "x": 104.77261874999999,
+          "y": 18.811875,
+          "z": 3.45534375
+        },
+        "your_z_is_restored_on_snap": true
+      },
+      "frames": [
+        {
+          "well": "B12",
+          "plate": "B",
+          "dx": -0.5,
+          "dy": -0.5,
+          "channel": "Fluorescence_488_nm_Ex",
+          "exposure_ms": 30,
+          "intensity": 20,
+          "pixel_size_um": 0.376,
+          "fov_um": [
+            783.6,
+            783.6
+          ],
+          "timestamp_utc": "20260930T212525228502Z",
+          "full_resolution": "fluorescence\\B\\B12\\20260930T212525228502Z_dx-0.5_dy-0.5_Fluorescence_488_nm_Ex.png",
+          "thumbnail": "fluorescence\\B\\B12\\20260930T212525228502Z_dx-0.5_dy-0.5_Fluorescence_488_nm_Ex_thumb.png",
+          "image_id": "81cd835b58dbb909",
+          "position_mm": {
+            "x": 103.22004375,
+            "y": 17.2593,
+            "z": 3.45534375
+          },
+          "light_budget": {
+            "well_used": 2400.0,
+            "well_budget": 200000.0,
+            "well_remaining": 197600.0,
+            "well_frames_left_at_this_setting": 329,
+            "host_on_time_s": 3.7,
+            "host_on_time_budget_s": 1800.0
+          },
+          "width": 2084,
+          "height": 2084
+        },
+        {
+          "well": "B12",
+          "plate": "B",
+          "dx": 0,
+          "dy": -0.5,
+          "channel": "Fluorescence_488_nm_Ex",
+          "exposure_ms": 30,
+          "intensity": 20,
+          "pixel_size_um": 0.376,
+          "fov_um": [
+            783.6,
+            783.6
+          ],
+          "timestamp_utc": "20260930T212528834856Z",
+          "full_resolution": "fluorescence\\B\\B12\\20260930T212528834856Z_dx0_dy-0.5_Fluorescence_488_nm_Ex.png",
+          "thumbnail": "fluorescence\\B\\B12\\20260930T212528834856Z_dx0_dy-0.5_Fluorescence_488_nm_Ex_thumb.png",
+          "image_id": "af92fec21fa69fcb",
+          "position_mm": {
+            "x": 104.77261874999999,
+            "y": 17.2593,
+            "z": 3.45534375
+          },
+          "light_budget": {
+            "well_used": 3000.0,
+            "well_budget": 200000.0,
+            "well_remaining": 197000.0,
+            "well_frames_left_at_this_setting": 328,
+            "host_on_time_s": 3.7,
+            "host_on_time_budget_s": 1800.0
+          },
+          "width": 2084,
+          "height": 2084
+        },
+        {
+          "well": "B12",
+          "plate": "B",
+          "dx": 0.5,
+          "dy": -0.5,
+          "channel": "Fluorescence_488_nm_Ex",
+          "exposure_ms": 30,
+          "intensity": 20,
+          "pixel_size_um": 0.376,
+          "fov_um": [
+            783.6,
+            783.6
+          ],
+          "timestamp_utc": "20260930T212532387918Z",
+          "full_resolution": "fluorescence\\B\\B12\\20260930T212532387918Z_dx0.5_dy-0.5_Fluorescence_488_nm_Ex.png",
+          "thumbnail": "fluorescence\\B\\B12\\20260930T212532387918Z_dx0.5_dy-0.5_Fluorescence_488_nm_Ex_thumb.png",
+          "image_id": "8a7e668601fc6289",
+          "position_mm": {
+            "x": 106.32519375,
+            "y": 17.2593,
+            "z": 3.45534375
+          },
+          "light_budget": {
+            "well_used": 3600.0,
+            "well_budget": 200000.0,
+            "well_remaining": 196400.0,
+            "well_frames_left_at_this_setting": 327,
+            "host_on_time_s": 3.7,
+            "host_on_time_budget_s": 1800.0
+          },
+          "width": 2084,
+          "height": 2084
+        },
+        {
+          "well": "B12",
+          "plate": "B",
+          "dx": -0.5,
+          "dy": 0,
+          "channel": "Fluorescence_488_nm_Ex",
+          "exposure_ms": 30,
+          "intensity": 20,
+          "pixel_size_um": 0.376,
+          "fov_um": [
+            783.6,
+            783.6
+          ],
+          "timestamp_utc": "20260930T212535924748Z",
+          "full_resolution": "fluorescence\\B\\B12\\20260930T212535924748Z_dx-0.5_dy0_Fluorescence_488_nm_Ex.png",
+          "thumbnail": "fluorescence\\B\\B12\\20260930T212535924748Z_dx-0.5_dy0_Fluorescence_488_nm_Ex_thumb.png",
+          "image_id": "ef66b99ed20836b1",
+          "position_mm": {
+            "x": 103.22004375,
+            "y": 18.811875,
+            "z": 3.45534375
+          },
+          "light_budget": {
+            "well_used": 4200.0,
+            "well_budget": 200000.0,
+            "well_remaining": 195800.0,
+            "well_frames_left_at_this_setting": 326,
+            "host_on_time_s": 3.8,
+            "host_on_time_budget_s": 1800.0
+          },
+          "width": 2084,
+          "height": 2084
+        },
+        {
+          "well": "B12",
+          "plate": "B",
+          "dx": 0,
+          "dy": 0,
+          "channel": "Fluorescence_488_nm_Ex",
+          "exposure_ms": 30,
+          "intensity": 20,
+          "pixel_size_um": 0.376,
+          "fov_um": [
+            783.6,
+            783.6
+          ],
+          "timestamp_utc": "20260930T212539448443Z",
+          "full_resolution": "fluorescence\\B\\B12\\20260930T212539448443Z_dx0_dy0_Fluorescence_488_nm_Ex.png",
+          "thumbnail": "fluorescence\\B\\B12\\20260930T212539448443Z_dx0_dy0_Fluorescence_488_nm_Ex_thumb.png",
+          "image_id": "19ad51f710c07cb3",
+          "position_mm": {
+            "x": 104.77261874999999,
+            "y": 18.811875,
+            "z": 3.45534375
+          },
+          "light_budget": {
+            "well_used": 4800.0,
+            "well_budget": 200000.0,
+            "well_remaining": 195200.0,
+            "well_frames_left_at_this_setting": 325,
+            "host_on_time_s": 3.8,
+            "host_on_time_budget_s": 1800.0
+          },
+          "width": 2084,
+          "height": 2084
+        },
+        {
+          "well": "B12",
+          "plate": "B",
+          "dx": 0.5,
+          "dy": 0,
+          "channel": "Fluorescence_488_nm_Ex",
+          "exposure_ms": 30,
+          "intensity": 20,
+          "pixel_size_um": 0.376,
+          "fov_um": [
+            783.6,
+            783.6
+          ],
+          "timestamp_utc": "20260930T212542852998Z",
+          "full_resolution": "fluorescence\\B\\B12\\20260930T212542852998Z_dx0.5_dy0_Fluorescence_488_nm_Ex.png",
+          "thumbnail": "fluorescence\\B\\B12\\20260930T212542852998Z_dx0.5_dy0_Fluorescence_488_nm_Ex_thumb.png",
+          "image_id": "518f067997685fca",
+          "position_mm": {
+            "x": 106.32519375,
+            "y": 18.811875,
+            "z": 3.45534375
+          },
+          "light_budget": {
+            "well_used": 5400.0,
+            "well_budget": 200000.0,
+            "well_remaining": 194600.0,
+            "well_frames_left_at_this_setting": 324,
+            "host_on_time_s": 3.8,
+            "host_on_time_budget_s": 1800.0
+          },
+          "width": 2084,
+          "height": 2084
+        },
+        {
+          "well": "B12",
+          "plate": "B",
+          "dx": -0.5,
+          "dy": 0.5,
+          "channel": "Fluorescence_488_nm_Ex",
+          "exposure_ms": 30,
+          "intensity": 20,
+          "pixel_size_um": 0.376,
+          "fov_um": [
+            783.6,
+            783.6
+          ],
+          "timestamp_utc": "20260930T212546480605Z",
+          "full_resolution": "fluorescence\\B\\B12\\20260930T212546480605Z_dx-0.5_dy0.5_Fluorescence_488_nm_Ex.png",
+          "thumbnail": "fluorescence\\B\\B12\\20260930T212546480605Z_dx-0.5_dy0.5_Fluorescence_488_nm_Ex_thumb.png",
+          "image_id": "3d786b5736ffc78f",
+          "position_mm": {
+            "x": 103.22004375,
+            "y": 20.364449999999998,
+            "z": 3.45534375
+          },
+          "light_budget": {
+            "well_used": 6000.0,
+            "well_budget": 200000.0,
+            "well_remaining": 194000.0,
+            "well_frames_left_at_this_setting": 323,
+            "host_on_time_s": 3.8,
+            "host_on_time_budget_s": 1800.0
+          },
+          "width": 2084,
+          "height": 2084
+        },
+        {
+          "well": "B12",
+          "plate": "B",
+          "dx": 0,
+          "dy": 0.5,
+          "channel": "Fluorescence_488_nm_Ex",
+          "exposure_ms": 30,
+          "intensity": 20,
+          "pixel_size_um": 0.376,
+          "fov_um": [
+            783.6,
+            783.6
+          ],
+          "timestamp_utc": "20260930T212549170118Z",
+          "full_resolution": "fluorescence\\B\\B12\\20260930T212549170118Z_dx0_dy0.5_Fluorescence_488_nm_Ex.png",
+          "thumbnail": "fluorescence\\B\\B12\\20260930T212549170118Z_dx0_dy0.5_Fluorescence_488_nm_Ex_thumb.png",
+          "image_id": "2aba60432170d955",
+          "position_mm": {
+            "x": 104.77261874999999,
+            "y": 20.364449999999998,
+            "z": 3.45534375
+          },
+          "light_budget": {
+            "well_used": 6600.0,
+            "well_budget": 200000.0,
+            "well_remaining": 193400.0,
+            "well_frames_left_at_this_setting": 322,
+            "host_on_time_s": 3.9,
+            "host_on_time_budget_s": 1800.0
+          },
+          "width": 2084,
+          "height": 2084
+        },
+        {
+          "well": "B12",
+          "plate": "B",
+          "dx": 0.5,
+          "dy": 0.5,
+          "channel": "Fluorescence_488_nm_Ex",
+          "exposure_ms": 30,
+          "intensity": 20,
+          "pixel_size_um": 0.376,
+          "fov_um": [
+            783.6,
+            783.6
+          ],
+          "timestamp_utc": "20260930T212553305673Z",
+          "full_resolution": "fluorescence\\B\\B12\\20260930T212553305673Z_dx0.5_dy0.5_Fluorescence_488_nm_Ex.png",
+          "thumbnail": "fluorescence\\B\\B12\\20260930T212553305673Z_dx0.5_dy0.5_Fluorescence_488_nm_Ex_thumb.png",
+          "image_id": "46fd2862a36a84b0",
+          "position_mm": {
+            "x": 106.32519375,
+            "y": 20.364449999999998,
+            "z": 3.45534375
+          },
+          "light_budget": {
+            "well_used": 7200.0,
+            "well_budget": 200000.0,
+            "well_remaining": 192800.0,
+            "well_frames_left_at_this_setting": 321,
+            "host_on_time_s": 3.9,
+            "host_on_time_budget_s": 1800.0
+          },
+          "width": 2084,
+          "height": 2084
+        }
+      ]
+    }
+  }
+}

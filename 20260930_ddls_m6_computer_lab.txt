@@ -1,0 +1,57 @@
+===
+Cddls M6 - Coumputation lab
+===
+
+===
+INTRODUCTION
+===
+Goal: Analyze the real freshwater sample is sitting on a real microscope - to know what’s in it.
+
+Do NOT force a discovery today — a validated, watchable loop is Wednesday’s win. Thursday: let it run, check your dashboard, steer, and curate toward the finding.
+
+This is a two-day campaign. Wednesday’s goal is not to make a discovery — it’s to leave with a working, validated loop and your live dashboard running, so it can accumulate observations on Thursday (and up to Fri 2 Oct 13:00, while the scope is open). Success today = “the loop works, is doing sensible things, and I can watch it.”
+
+===
+DATA
+===
+The real sample. Two plates of a freshwater pond sample are loaded on the scope: PD260929CTA (on carrier squid+3) and PD260929CTB (on squid+4), 200 µL seeded in every well. It’s a live drop from a small pool at Sjukhusparken, Solna (map) — a genuine, un-curated field sample, so it could hold all sorts of microorganisms: ciliates, flagellates, amoebae, rotifers, micro-crustacea, green algae, desmids, diatoms, cyanobacteria, biofilm bacteria, and plenty of debris between. Part of the fun is not knowing. The microscope is only live Wed 30 Sep → hard-off Fri 2 Oct 13:00 — it goes dark after that, so all imaging happens inside that window.
+
+===
+TASKS
+===
+1. Directed an AI agent to do open-ended scientific exploration on a REAL instrument and you supplying the judgement and verification.
+2. Built a continuous discovery loop (Ralph) that runs: plan → image → observe → analyse → hypothesise → decide → iterate, remembering what it found across iterations.
+3. Done real-time analysis and hypothesis generation. The agent proposes; you check every claim against the actual frames and against real literature.
+4. Brainstormed the direction with your research collaborator — no fixed question, choose what’s worth chasing.
+
+===
+HAND IN
+===
+1. Running Ralph discovery loop — the configured RALPH.md, snap.py helper, and running memory (RALPH_PROGRESS.md, OPEN_QUESTIONS.md).
+2. A live discovery dashboard — web app (Part 3) and exploration cockpit: shows the latest snap, current findings, the running hypotheses/observations table, simple counts/stats, auto-refreshing. You explore through it to design your steps, then it becomes how you watch the loop unfold in real time.
+3. A lab-notebook log — a timestamped, honest record of what you tried, saw, and concluded (RALPH_PROGRESS.md plus a structured findings log), noting which claims you verified against frames + literature and which you couldn’t.
+4. Your seminar presentation (Friday) — see the seminar page.
+
+===
+STEPS
+===
+1. Brainstorm a direction with your collaborator until it’s concrete and testable
+	40 min	Part 1
+2. Open the “Your microscope” panel in the portal, copy your API link, read its SKILL.md 
+	10 min	Part 2
+3. Ready your analyst agent (Pi): two paste-in prompts: config check, install loop, write snap.py
+	15 min	Part 2
+4. Validate instrument: status → autofocus → BF snap → FL snap → dx/dy snap; confirm read
+	15 min	Part 2
+5. Build your live dashboard, then explore: scout your well by eye and decide automating steps
+	45 min	Part 3
+6. Write the Ralph loop around those validated steps, with auto-validation baked in
+	30 min	Part 4
+7. Test it on 2 iterations (watch it image + log), then launch it to run
+	Part 4, Part 6
+
+
+===
+INFORMATION
+===
+- Submit links/files in the portal with your Agent-A brainstorm and Pi transcripts. Keep it proportionate — this is a self-directed capstone, not a paper.

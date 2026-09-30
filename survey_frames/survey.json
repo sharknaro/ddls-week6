@@ -1,0 +1,119 @@
+[
+  {
+    "dx": -0.5,
+    "dy": -0.5,
+    "frames": [
+      "survey_frames\\m0.5_m0.5_0.png",
+      "survey_frames\\m0.5_m0.5_1.png"
+    ],
+    "position_mm": {
+      "x": 94.446725,
+      "y": 18.446749999999998,
+      "z": 5.4169687500000006
+    }
+  },
+  {
+    "dx": 0,
+    "dy": -0.5,
+    "frames": [
+      "survey_frames\\0_m0.5_0.png",
+      "survey_frames\\0_m0.5_1.png"
+    ],
+    "position_mm": {
+      "x": 95.99929999999999,
+      "y": 18.446749999999998,
+      "z": 5.4169687500000006
+    }
+  },
+  {
+    "dx": 0.5,
+    "dy": -0.5,
+    "frames": [
+      "survey_frames\\0.5_m0.5_0.png",
+      "survey_frames\\0.5_m0.5_1.png"
+    ],
+    "position_mm": {
+      "x": 97.551875,
+      "y": 18.446749999999998,
+      "z": 5.4169687500000006
+    }
+  },
+  {
+    "dx": -0.5,
+    "dy": 0,
+    "frames": [
+      "survey_frames\\m0.5_0_0.png",
+      "survey_frames\\m0.5_0_1.png"
+    ],
+    "position_mm": {
+      "x": 94.446725,
+      "y": 19.999325,
+      "z": 5.4169687500000006
+    }
+  },
+  {
+    "dx": 0,
+    "dy": 0,
+    "frames": [
+      "survey_frames\\0_0_0.png",
+      "survey_frames\\0_0_1.png"
+    ],
+    "position_mm": {
+      "x": 95.99929999999999,
+      "y": 19.999325,
+      "z": 5.4169687500000006
+    }
+  },
+  {
+    "dx": 0.5,
+    "dy": 0,
+    "frames": [
+      "survey_frames\\0.5_0_0.png",
+      "survey_frames\\0.5_0_1.png"
+    ],
+    "position_mm": {
+      "x": 97.551875,
+      "y": 19.999325,
+      "z": 5.4169687500000006
+    }
+  },
+  {
+    "dx": -0.5,
+    "dy": 0.5,
+    "frames": [
+      "survey_frames\\m0.5_0.5_0.png",
+      "survey_frames\\m0.5_0.5_1.png"
+    ],
+    "position_mm": {
+      "x": 94.446725,
+      "y": 21.5519,
+      "z": 5.4169687500000006
+    }
+  },
+  {
+    "dx": 0,
+    "dy": 0.5,
+    "frames": [
+      "survey_frames\\0_0.5_0.png",
+      "survey_frames\\0_0.5_1.png"
+    ],
+    "position_mm": {
+      "x": 95.99929999999999,
+      "y": 21.5519,
+      "z": 5.4169687500000006
+    }
+  },
+  {
+    "dx": 0.5,
+    "dy": 0.5,
+    "frames": [
+      "survey_frames\\0.5_0.5_0.png",
+      "survey_frames\\0.5_0.5_1.png"
+    ],
+    "position_mm": {
+      "x": 97.551875,
+      "y": 21.5519,
+      "z": 5.4169687500000006
+    }
+  }
+]

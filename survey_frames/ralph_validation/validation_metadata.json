@@ -1,0 +1,248 @@
+{
+  "iterations": [
+    {
+      "iteration": 1,
+      "station": {
+        "plate": "A",
+        "well": "B11",
+        "dx": -0.5,
+        "dy": -0.5
+      },
+      "status_position_mm": {
+        "x": 49.1363,
+        "y": 36.1362625,
+        "z": 5.3938125
+      },
+      "status_scale": {
+        "pixel_size_um": 0.376,
+        "fov_um": [
+          783.6,
+          783.6
+        ]
+      },
+      "focus": {
+        "ok": true,
+        "well": "B11",
+        "host": "squid+3",
+        "plate": "PD260929CTA",
+        "plate_letter": "A",
+        "your_plate_counts": {
+          "squid+3": 57,
+          "squid+4": 65
+        },
+        "result": {
+          "ok": true,
+          "reference_warnings": [
+            {
+              "code": "af_reference_unvalidated_no_validator",
+              "message": "the stored AF reference was never shown to be at focus (recorded before set-time validation existed). Laser AF reproduces whatever plane it was given, so a soft reference yields soft data on every well with no error raised. NOTE: this server cannot yet validate a reference at set time (#0069 sweep not wired), so this is reported as a WARNING rather than refused \u2014 refusing would demand proof no code path can produce, leaving no way to clear it"
+            }
+          ]
+        },
+        "took_ms": 3509.1,
+        "position_mm": {
+          "x": 95.99929999999999,
+          "y": 19.999325,
+          "z": 5.415
+        },
+        "your_z_is_restored_on_snap": true
+      },
+      "bf": {
+        "plate": "A",
+        "well": "B11",
+        "dx": -0.5,
+        "dy": -0.5,
+        "iteration": 1,
+        "channel": "BF_LED_matrix_full",
+        "exposure_ms": 20,
+        "intensity": 20,
+        "pixel_size_um": 0.376,
+        "fov_um": [
+          783.6,
+          783.6
+        ],
+        "timestamp_utc": "20260930T222702750510Z",
+        "full_resolution": "survey_frames\\ralph_validation\\iteration_1\\20260930T222702750510Z_A_B11_dx-0.5_dy-0.5_BF_LED_matrix_full.png",
+        "thumbnail": "survey_frames\\ralph_validation\\iteration_1\\20260930T222702750510Z_A_B11_dx-0.5_dy-0.5_BF_LED_matrix_full_thumb.png",
+        "position_mm": {
+          "x": 94.446725,
+          "y": 18.446749999999998,
+          "z": 5.415
+        },
+        "image_id": "7f1d96693ea4ef8e",
+        "width": 2084,
+        "height": 2084,
+        "light_budget": {
+          "well_used": 17200.0,
+          "well_budget": 2000000.0,
+          "well_remaining": 1982800.0,
+          "well_frames_left_at_this_setting": 4957,
+          "host_on_time_s": 16.9,
+          "host_on_time_budget_s": null
+        }
+      },
+      "fl": {
+        "plate": "A",
+        "well": "B11",
+        "dx": -0.5,
+        "dy": -0.5,
+        "iteration": 1,
+        "channel": "Fluorescence_488_nm_Ex",
+        "exposure_ms": 30,
+        "intensity": 20,
+        "pixel_size_um": 0.376,
+        "fov_um": [
+          783.6,
+          783.6
+        ],
+        "timestamp_utc": "20260930T222706895411Z",
+        "full_resolution": "survey_frames\\ralph_validation\\iteration_1\\20260930T222706895411Z_A_B11_dx-0.5_dy-0.5_Fluorescence_488_nm_Ex.png",
+        "thumbnail": "survey_frames\\ralph_validation\\iteration_1\\20260930T222706895411Z_A_B11_dx-0.5_dy-0.5_Fluorescence_488_nm_Ex_thumb.png",
+        "position_mm": {
+          "x": 94.446725,
+          "y": 18.446749999999998,
+          "z": 5.415
+        },
+        "image_id": "ffe21a812ae7c990",
+        "width": 2084,
+        "height": 2084,
+        "light_budget": {
+          "well_used": 18000.0,
+          "well_budget": 200000.0,
+          "well_remaining": 182000.0,
+          "well_frames_left_at_this_setting": 303,
+          "host_on_time_s": 5.6,
+          "host_on_time_budget_s": 1800.0
+        }
+      },
+      "measurement": {
+        "type": "manual_full_resolution_span_check",
+        "pixels": 100,
+        "micrometres": 37.6,
+        "scale_source": "GET /v1/status result.scale.pixel_size_um"
+      }
+    },
+    {
+      "iteration": 2,
+      "station": {
+        "plate": "A",
+        "well": "B11",
+        "dx": -0.5,
+        "dy": -0.5
+      },
+      "status_position_mm": {
+        "x": 94.446725,
+        "y": 18.446749999999998,
+        "z": 5.415
+      },
+      "status_scale": {
+        "pixel_size_um": 0.376,
+        "fov_um": [
+          783.6,
+          783.6
+        ]
+      },
+      "focus": {
+        "ok": true,
+        "well": "B11",
+        "host": "squid+3",
+        "plate": "PD260929CTA",
+        "plate_letter": "A",
+        "your_plate_counts": {
+          "squid+3": 61,
+          "squid+4": 65
+        },
+        "result": {
+          "ok": true,
+          "reference_warnings": [
+            {
+              "code": "af_reference_unvalidated_no_validator",
+              "message": "the stored AF reference was never shown to be at focus (recorded before set-time validation existed). Laser AF reproduces whatever plane it was given, so a soft reference yields soft data on every well with no error raised. NOTE: this server cannot yet validate a reference at set time (#0069 sweep not wired), so this is reported as a WARNING rather than refused \u2014 refusing would demand proof no code path can produce, leaving no way to clear it"
+            }
+          ]
+        },
+        "took_ms": 1620.7,
+        "position_mm": {
+          "x": 95.99929999999999,
+          "y": 19.999325,
+          "z": 5.4193125
+        },
+        "your_z_is_restored_on_snap": true
+      },
+      "bf": {
+        "plate": "A",
+        "well": "B11",
+        "dx": -0.5,
+        "dy": -0.5,
+        "iteration": 2,
+        "channel": "BF_LED_matrix_full",
+        "exposure_ms": 20,
+        "intensity": 20,
+        "pixel_size_um": 0.376,
+        "fov_um": [
+          783.6,
+          783.6
+        ],
+        "timestamp_utc": "20260930T222712898120Z",
+        "full_resolution": "survey_frames\\ralph_validation\\iteration_2\\20260930T222712898120Z_A_B11_dx-0.5_dy-0.5_BF_LED_matrix_full.png",
+        "thumbnail": "survey_frames\\ralph_validation\\iteration_2\\20260930T222712898120Z_A_B11_dx-0.5_dy-0.5_BF_LED_matrix_full_thumb.png",
+        "position_mm": {
+          "x": 94.446725,
+          "y": 18.446749999999998,
+          "z": 5.4193125
+        },
+        "image_id": "e78179670cce9035",
+        "width": 2084,
+        "height": 2084,
+        "light_budget": {
+          "well_used": 17600.0,
+          "well_budget": 2000000.0,
+          "well_remaining": 1982400.0,
+          "well_frames_left_at_this_setting": 4956,
+          "host_on_time_s": 16.9,
+          "host_on_time_budget_s": null
+        }
+      },
+      "fl": {
+        "plate": "A",
+        "well": "B11",
+        "dx": -0.5,
+        "dy": -0.5,
+        "iteration": 2,
+        "channel": "Fluorescence_488_nm_Ex",
+        "exposure_ms": 30,
+        "intensity": 20,
+        "pixel_size_um": 0.376,
+        "fov_um": [
+          783.6,
+          783.6
+        ],
+        "timestamp_utc": "20260930T222716459898Z",
+        "full_resolution": "survey_frames\\ralph_validation\\iteration_2\\20260930T222716459898Z_A_B11_dx-0.5_dy-0.5_Fluorescence_488_nm_Ex.png",
+        "thumbnail": "survey_frames\\ralph_validation\\iteration_2\\20260930T222716459898Z_A_B11_dx-0.5_dy-0.5_Fluorescence_488_nm_Ex_thumb.png",
+        "position_mm": {
+          "x": 94.446725,
+          "y": 18.446749999999998,
+          "z": 5.4193125
+        },
+        "image_id": "0bb061988abfaa84",
+        "width": 2084,
+        "height": 2084,
+        "light_budget": {
+          "well_used": 18600.0,
+          "well_budget": 200000.0,
+          "well_remaining": 181400.0,
+          "well_frames_left_at_this_setting": 302,
+          "host_on_time_s": 5.7,
+          "host_on_time_budget_s": 1800.0
+        }
+      },
+      "measurement": {
+        "type": "manual_full_resolution_span_check",
+        "pixels": 100,
+        "micrometres": 37.6,
+        "scale_source": "GET /v1/status result.scale.pixel_size_um"
+      }
+    }
+  ]
+}

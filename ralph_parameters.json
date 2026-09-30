@@ -1,0 +1,57 @@
+{
+  "version": 1,
+  "purpose": "Validated starting parameters for the DDLS microscope Ralph loop",
+  "source": "survey_frames/optimization/plate_A/well_B11/optimization_analysis.json",
+  "scope": {
+    "validated_well": "B11",
+    "validated_plate": "A",
+    "transfer_policy": "Use as starting values for other owned wells/plates, then verify with status and a conservative pilot"
+  },
+  "sampling": {
+    "coarse_step": 0.5,
+    "refinement_step": 0.25,
+    "coarse_grid": [-0.5, 0.0, 0.5],
+    "refine_high_scoring_fields": true,
+    "well_coordinate_rule": "dx^2 + dy^2 <= 1",
+    "use_atomic_snap_coordinates": true,
+    "never_move_then_snap": true
+  },
+  "brightfield": {
+    "channel": "BF_LED_matrix_full",
+    "exposure_ms": 20,
+    "intensity": 20
+  },
+  "fluorescence": {
+    "channel": "Fluorescence_488_nm_Ex",
+    "exposure_ms": 30,
+    "intensity": 20,
+    "first_request_timeout_s": 30,
+    "fallback_if_saturated": [
+      {"exposure_ms": 20, "intensity": 20},
+      {"exposure_ms": 10, "intensity": 20},
+      {"exposure_ms": 10, "intensity": 15}
+    ],
+    "policy": "Reduce exposure/intensity when saturated; do not increase settings on blank-white frames"
+  },
+  "workflow": [
+    "Read /v1/status?plate=... once per plate/session",
+    "Record result.scale.pixel_size_um and result.scale.fov_um",
+    "Autofocus once per well before the first real snap",
+    "Run coarse brightfield grid",
+    "Repeat promising fields to assess motion",
+    "Run fluorescence only on high-scoring brightfield fields",
+    "Use BF1 -> FL -> BF2 for paired comparisons",
+    "Verify matching position_mm.z between comparable frames",
+    "Save full-resolution images, thumbnails, and complete metadata",
+    "Back off and retry 429/503 responses using retry_after_s"
+  ],
+  "measurement_policy": {
+    "scale_source": "/v1/status result.scale",
+    "use_full_resolution_for_measurements": true,
+    "thumbnail_use": "visual inspection only"
+  },
+  "light_safety": {
+    "track_light_budget": true,
+    "avoid_unnecessary_fluorescence_frames": true
+  }
+}

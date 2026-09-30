@@ -1,0 +1,20 @@
+{
+  "campaign": "randomized_photosynthetic_screen",
+  "status": "not_completed",
+  "reason": "The gateway returned HTTP 404 for GET /v1/status?plate=B, so plate B could not be accessed and the campaign was stopped before acquiring a complete balanced dataset.",
+  "attempted_samples": [
+    {"plate": "A", "well": "B11"},
+    {"plate": "A", "well": "B12"},
+    {"plate": "B", "well": "B11"},
+    {"plate": "B", "well": "B12"}
+  ],
+  "random_seed": 20260930,
+  "planned_points_per_sample": 3,
+  "planned_coordinates_are_interior": true,
+  "planned_channels": ["BF_LED_matrix_full", "Fluorescence_488_nm_Ex"],
+  "planned_settings": {
+    "brightfield": {"exposure_ms": 20, "intensity": 20},
+    "fluorescence": {"exposure_ms": 30, "intensity": 20}
+  },
+  "note": "No completed campaign dataset or biological comparison should be inferred from this run. Retry after confirming the plate-B identifier and gateway availability."
+}

@@ -1,0 +1,12 @@
+{
+  "root": "survey_frames",
+  "collections": {
+    "historical_surveys": "survey_frames/trail1_A",
+    "paired_comparisons": "survey_frames/trail1_A/paired_20260930T",
+    "optimization": "survey_frames/optimization",
+    "fluorescence": "survey_frames/fluorescence",
+    "random_campaign": "survey_frames/random_campaign_20260930",
+    "organized_well_frames": "survey_frames/plate_A and survey_frames/plate_B"
+  },
+  "notes": "All full-resolution frames, thumbnails, metadata, and analysis files are organized below survey_frames."
+}

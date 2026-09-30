@@ -1,0 +1,517 @@
+{
+  "experiment": "step_size_and_fluorescence_optimization",
+  "timestamp_utc": "2026-09-30T20:42:20.612990+00:00",
+  "well": "B11",
+  "plate": "A",
+  "pixel_size_um": 0.376,
+  "fov_um": [
+    783.6,
+    783.6
+  ],
+  "status": {
+    "position_mm": {
+      "x": 77.06836249999999,
+      "y": 21.5519,
+      "z": 5.41003125
+    }
+  },
+  "step_grid": [
+    [
+      -0.5,
+      -0.5
+    ],
+    [
+      0,
+      -0.5
+    ],
+    [
+      0.5,
+      -0.5
+    ],
+    [
+      -0.5,
+      0
+    ],
+    [
+      0,
+      0
+    ],
+    [
+      0.5,
+      0
+    ],
+    [
+      -0.5,
+      0.5
+    ],
+    [
+      0,
+      0.5
+    ],
+    [
+      0.5,
+      0.5
+    ]
+  ],
+  "step_frames": [
+    {
+      "well": "B11",
+      "plate": "A",
+      "dx": -0.5,
+      "dy": -0.5,
+      "channel": "BF_LED_matrix_full",
+      "exposure_ms": 20,
+      "intensity": 20,
+      "timestamp_utc": "20260930T204127739398Z",
+      "full": "survey_frames\\optimization\\plate_A\\well_B11\\step_grid\\20260930T204127739398Z_BF_LED_matrix_full_20ms_20i.png",
+      "thumbnail": "survey_frames\\optimization\\plate_A\\well_B11\\step_grid\\20260930T204127739398Z_BF_LED_matrix_full_20ms_20i_thumb.png",
+      "image_id": "a3792718683e6d69",
+      "position_mm": {
+        "x": 94.446725,
+        "y": 18.446749999999998,
+        "z": 5.4215625
+      },
+      "width": 2084,
+      "height": 2084,
+      "light_budget": {
+        "well_used": 11200.0,
+        "well_budget": 2000000.0,
+        "well_remaining": 1988800.0,
+        "well_frames_left_at_this_setting": 4972,
+        "host_on_time_s": 15.8,
+        "host_on_time_budget_s": null
+      }
+    },
+    {
+      "well": "B11",
+      "plate": "A",
+      "dx": 0,
+      "dy": -0.5,
+      "channel": "BF_LED_matrix_full",
+      "exposure_ms": 20,
+      "intensity": 20,
+      "timestamp_utc": "20260930T204131332720Z",
+      "full": "survey_frames\\optimization\\plate_A\\well_B11\\step_grid\\20260930T204131332720Z_BF_LED_matrix_full_20ms_20i.png",
+      "thumbnail": "survey_frames\\optimization\\plate_A\\well_B11\\step_grid\\20260930T204131332720Z_BF_LED_matrix_full_20ms_20i_thumb.png",
+      "image_id": "9d92339c5ca8c933",
+      "position_mm": {
+        "x": 95.99929999999999,
+        "y": 18.446749999999998,
+        "z": 5.4215625
+      },
+      "width": 2084,
+      "height": 2084,
+      "light_budget": {
+        "well_used": 11600.0,
+        "well_budget": 2000000.0,
+        "well_remaining": 1988400.0,
+        "well_frames_left_at_this_setting": 4971,
+        "host_on_time_s": 15.8,
+        "host_on_time_budget_s": null
+      }
+    },
+    {
+      "well": "B11",
+      "plate": "A",
+      "dx": 0.5,
+      "dy": -0.5,
+      "channel": "BF_LED_matrix_full",
+      "exposure_ms": 20,
+      "intensity": 20,
+      "timestamp_utc": "20260930T204134903487Z",
+      "full": "survey_frames\\optimization\\plate_A\\well_B11\\step_grid\\20260930T204134903487Z_BF_LED_matrix_full_20ms_20i.png",
+      "thumbnail": "survey_frames\\optimization\\plate_A\\well_B11\\step_grid\\20260930T204134903487Z_BF_LED_matrix_full_20ms_20i_thumb.png",
+      "image_id": "fe18ee351880796f",
+      "position_mm": {
+        "x": 97.551875,
+        "y": 18.446749999999998,
+        "z": 5.4215625
+      },
+      "width": 2084,
+      "height": 2084,
+      "light_budget": {
+        "well_used": 12000.0,
+        "well_budget": 2000000.0,
+        "well_remaining": 1988000.0,
+        "well_frames_left_at_this_setting": 4970,
+        "host_on_time_s": 15.8,
+        "host_on_time_budget_s": null
+      }
+    },
+    {
+      "well": "B11",
+      "plate": "A",
+      "dx": -0.5,
+      "dy": 0,
+      "channel": "BF_LED_matrix_full",
+      "exposure_ms": 20,
+      "intensity": 20,
+      "timestamp_utc": "20260930T204138614688Z",
+      "full": "survey_frames\\optimization\\plate_A\\well_B11\\step_grid\\20260930T204138614688Z_BF_LED_matrix_full_20ms_20i.png",
+      "thumbnail": "survey_frames\\optimization\\plate_A\\well_B11\\step_grid\\20260930T204138614688Z_BF_LED_matrix_full_20ms_20i_thumb.png",
+      "image_id": "3d09618af7c3d60e",
+      "position_mm": {
+        "x": 94.446725,
+        "y": 19.999325,
+        "z": 5.4215625
+      },
+      "width": 2084,
+      "height": 2084,
+      "light_budget": {
+        "well_used": 12400.0,
+        "well_budget": 2000000.0,
+        "well_remaining": 1987600.0,
+        "well_frames_left_at_this_setting": 4969,
+        "host_on_time_s": 15.9,
+        "host_on_time_budget_s": null
+      }
+    },
+    {
+      "well": "B11",
+      "plate": "A",
+      "dx": 0,
+      "dy": 0,
+      "channel": "BF_LED_matrix_full",
+      "exposure_ms": 20,
+      "intensity": 20,
+      "timestamp_utc": "20260930T204142177714Z",
+      "full": "survey_frames\\optimization\\plate_A\\well_B11\\step_grid\\20260930T204142177714Z_BF_LED_matrix_full_20ms_20i.png",
+      "thumbnail": "survey_frames\\optimization\\plate_A\\well_B11\\step_grid\\20260930T204142177714Z_BF_LED_matrix_full_20ms_20i_thumb.png",
+      "image_id": "e3d69df5319f4647",
+      "position_mm": {
+        "x": 95.99929999999999,
+        "y": 19.999325,
+        "z": 5.4215625
+      },
+      "width": 2084,
+      "height": 2084,
+      "light_budget": {
+        "well_used": 12800.0,
+        "well_budget": 2000000.0,
+        "well_remaining": 1987200.0,
+        "well_frames_left_at_this_setting": 4968,
+        "host_on_time_s": 15.9,
+        "host_on_time_budget_s": null
+      }
+    },
+    {
+      "well": "B11",
+      "plate": "A",
+      "dx": 0.5,
+      "dy": 0,
+      "channel": "BF_LED_matrix_full",
+      "exposure_ms": 20,
+      "intensity": 20,
+      "timestamp_utc": "20260930T204145882161Z",
+      "full": "survey_frames\\optimization\\plate_A\\well_B11\\step_grid\\20260930T204145882161Z_BF_LED_matrix_full_20ms_20i.png",
+      "thumbnail": "survey_frames\\optimization\\plate_A\\well_B11\\step_grid\\20260930T204145882161Z_BF_LED_matrix_full_20ms_20i_thumb.png",
+      "image_id": "a71bcefafeef04d1",
+      "position_mm": {
+        "x": 97.551875,
+        "y": 19.999325,
+        "z": 5.4215625
+      },
+      "width": 2084,
+      "height": 2084,
+      "light_budget": {
+        "well_used": 13200.0,
+        "well_budget": 2000000.0,
+        "well_remaining": 1986800.0,
+        "well_frames_left_at_this_setting": 4967,
+        "host_on_time_s": 15.9,
+        "host_on_time_budget_s": null
+      }
+    },
+    {
+      "well": "B11",
+      "plate": "A",
+      "dx": -0.5,
+      "dy": 0.5,
+      "channel": "BF_LED_matrix_full",
+      "exposure_ms": 20,
+      "intensity": 20,
+      "timestamp_utc": "20260930T204149456700Z",
+      "full": "survey_frames\\optimization\\plate_A\\well_B11\\step_grid\\20260930T204149456700Z_BF_LED_matrix_full_20ms_20i.png",
+      "thumbnail": "survey_frames\\optimization\\plate_A\\well_B11\\step_grid\\20260930T204149456700Z_BF_LED_matrix_full_20ms_20i_thumb.png",
+      "image_id": "d350f69fdcdfada5",
+      "position_mm": {
+        "x": 94.446725,
+        "y": 21.5519,
+        "z": 5.4215625
+      },
+      "width": 2084,
+      "height": 2084,
+      "light_budget": {
+        "well_used": 13600.0,
+        "well_budget": 2000000.0,
+        "well_remaining": 1986400.0,
+        "well_frames_left_at_this_setting": 4966,
+        "host_on_time_s": 15.9,
+        "host_on_time_budget_s": null
+      }
+    },
+    {
+      "well": "B11",
+      "plate": "A",
+      "dx": 0,
+      "dy": 0.5,
+      "channel": "BF_LED_matrix_full",
+      "exposure_ms": 20,
+      "intensity": 20,
+      "timestamp_utc": "20260930T204152854739Z",
+      "full": "survey_frames\\optimization\\plate_A\\well_B11\\step_grid\\20260930T204152854739Z_BF_LED_matrix_full_20ms_20i.png",
+      "thumbnail": "survey_frames\\optimization\\plate_A\\well_B11\\step_grid\\20260930T204152854739Z_BF_LED_matrix_full_20ms_20i_thumb.png",
+      "image_id": "587459a136433eaa",
+      "position_mm": {
+        "x": 95.99929999999999,
+        "y": 21.5519,
+        "z": 5.4215625
+      },
+      "width": 2084,
+      "height": 2084,
+      "light_budget": {
+        "well_used": 14000.0,
+        "well_budget": 2000000.0,
+        "well_remaining": 1986000.0,
+        "well_frames_left_at_this_setting": 4965,
+        "host_on_time_s": 15.9,
+        "host_on_time_budget_s": null
+      }
+    },
+    {
+      "well": "B11",
+      "plate": "A",
+      "dx": 0.5,
+      "dy": 0.5,
+      "channel": "BF_LED_matrix_full",
+      "exposure_ms": 20,
+      "intensity": 20,
+      "timestamp_utc": "20260930T204156504436Z",
+      "full": "survey_frames\\optimization\\plate_A\\well_B11\\step_grid\\20260930T204156504436Z_BF_LED_matrix_full_20ms_20i.png",
+      "thumbnail": "survey_frames\\optimization\\plate_A\\well_B11\\step_grid\\20260930T204156504436Z_BF_LED_matrix_full_20ms_20i_thumb.png",
+      "image_id": "dbf98427c89fffdd",
+      "position_mm": {
+        "x": 97.551875,
+        "y": 21.5519,
+        "z": 5.4215625
+      },
+      "width": 2084,
+      "height": 2084,
+      "light_budget": {
+        "well_used": 14400.0,
+        "well_budget": 2000000.0,
+        "well_remaining": 1985600.0,
+        "well_frames_left_at_this_setting": 4964,
+        "host_on_time_s": 16.0,
+        "host_on_time_budget_s": null
+      }
+    }
+  ],
+  "fluorescence_exposure_ladder_ms": [
+    10,
+    20,
+    30,
+    50
+  ],
+  "fluorescence_frames": [
+    {
+      "well": "B11",
+      "plate": "A",
+      "dx": 0,
+      "dy": 0,
+      "channel": "Fluorescence_488_nm_Ex",
+      "exposure_ms": 10,
+      "intensity": 20,
+      "timestamp_utc": "20260930T204201018406Z",
+      "full": "survey_frames\\optimization\\plate_A\\well_B11\\fluorescence_ladder\\20260930T204201018406Z_Fluorescence_488_nm_Ex_10ms_20i.png",
+      "thumbnail": "survey_frames\\optimization\\plate_A\\well_B11\\fluorescence_ladder\\20260930T204201018406Z_Fluorescence_488_nm_Ex_10ms_20i_thumb.png",
+      "image_id": "18d6c874d89d1ee4",
+      "position_mm": {
+        "x": 95.99929999999999,
+        "y": 19.999325,
+        "z": 5.4215625
+      },
+      "width": 2084,
+      "height": 2084,
+      "light_budget": {
+        "well_used": 6000.0,
+        "well_budget": 200000.0,
+        "well_remaining": 194000.0,
+        "well_frames_left_at_this_setting": 970,
+        "host_on_time_s": 4.9,
+        "host_on_time_budget_s": 1800.0
+      }
+    },
+    {
+      "well": "B11",
+      "plate": "A",
+      "dx": 0,
+      "dy": 0,
+      "channel": "Fluorescence_488_nm_Ex",
+      "exposure_ms": 20,
+      "intensity": 20,
+      "timestamp_utc": "20260930T204204570193Z",
+      "full": "survey_frames\\optimization\\plate_A\\well_B11\\fluorescence_ladder\\20260930T204204570193Z_Fluorescence_488_nm_Ex_20ms_20i.png",
+      "thumbnail": "survey_frames\\optimization\\plate_A\\well_B11\\fluorescence_ladder\\20260930T204204570193Z_Fluorescence_488_nm_Ex_20ms_20i_thumb.png",
+      "image_id": "dc7ec0d0e7871b1c",
+      "position_mm": {
+        "x": 95.99929999999999,
+        "y": 19.999325,
+        "z": 5.4215625
+      },
+      "width": 2084,
+      "height": 2084,
+      "light_budget": {
+        "well_used": 6400.0,
+        "well_budget": 200000.0,
+        "well_remaining": 193600.0,
+        "well_frames_left_at_this_setting": 484,
+        "host_on_time_s": 4.9,
+        "host_on_time_budget_s": 1800.0
+      }
+    },
+    {
+      "well": "B11",
+      "plate": "A",
+      "dx": 0,
+      "dy": 0,
+      "channel": "Fluorescence_488_nm_Ex",
+      "exposure_ms": 30,
+      "intensity": 20,
+      "timestamp_utc": "20260930T204208058703Z",
+      "full": "survey_frames\\optimization\\plate_A\\well_B11\\fluorescence_ladder\\20260930T204208058703Z_Fluorescence_488_nm_Ex_30ms_20i.png",
+      "thumbnail": "survey_frames\\optimization\\plate_A\\well_B11\\fluorescence_ladder\\20260930T204208058703Z_Fluorescence_488_nm_Ex_30ms_20i_thumb.png",
+      "image_id": "d8f58898e0095bfb",
+      "position_mm": {
+        "x": 95.99929999999999,
+        "y": 19.999325,
+        "z": 5.4215625
+      },
+      "width": 2084,
+      "height": 2084,
+      "light_budget": {
+        "well_used": 7000.0,
+        "well_budget": 200000.0,
+        "well_remaining": 193000.0,
+        "well_frames_left_at_this_setting": 321,
+        "host_on_time_s": 4.9,
+        "host_on_time_budget_s": 1800.0
+      }
+    },
+    {
+      "well": "B11",
+      "plate": "A",
+      "dx": 0,
+      "dy": 0,
+      "channel": "Fluorescence_488_nm_Ex",
+      "exposure_ms": 50,
+      "intensity": 20,
+      "timestamp_utc": "20260930T204211544893Z",
+      "full": "survey_frames\\optimization\\plate_A\\well_B11\\fluorescence_ladder\\20260930T204211544893Z_Fluorescence_488_nm_Ex_50ms_20i.png",
+      "thumbnail": "survey_frames\\optimization\\plate_A\\well_B11\\fluorescence_ladder\\20260930T204211544893Z_Fluorescence_488_nm_Ex_50ms_20i_thumb.png",
+      "image_id": "610473f52db556e5",
+      "position_mm": {
+        "x": 95.99929999999999,
+        "y": 19.999325,
+        "z": 5.4215625
+      },
+      "width": 2084,
+      "height": 2084,
+      "light_budget": {
+        "well_used": 8000.0,
+        "well_budget": 200000.0,
+        "well_remaining": 192000.0,
+        "well_frames_left_at_this_setting": 192,
+        "host_on_time_s": 5.0,
+        "host_on_time_budget_s": 1800.0
+      }
+    }
+  ],
+  "paired_best_frames": [
+    {
+      "well": "B11",
+      "plate": "A",
+      "dx": -0.5,
+      "dy": -0.5,
+      "channel": "BF_LED_matrix_full",
+      "exposure_ms": 20,
+      "intensity": 20,
+      "timestamp_utc": "20260930T204214546097Z",
+      "full": "survey_frames\\optimization\\plate_A\\well_B11\\paired_best\\20260930T204214546097Z_BF_LED_matrix_full_20ms_20i.png",
+      "thumbnail": "survey_frames\\optimization\\plate_A\\well_B11\\paired_best\\20260930T204214546097Z_BF_LED_matrix_full_20ms_20i_thumb.png",
+      "image_id": "cddf9a4366bb5260",
+      "position_mm": {
+        "x": 94.446725,
+        "y": 18.446749999999998,
+        "z": 5.4215625
+      },
+      "width": 2084,
+      "height": 2084,
+      "light_budget": {
+        "well_used": 14800.0,
+        "well_budget": 2000000.0,
+        "well_remaining": 1985200.0,
+        "well_frames_left_at_this_setting": 4963,
+        "host_on_time_s": 16.0,
+        "host_on_time_budget_s": null
+      }
+    },
+    {
+      "well": "B11",
+      "plate": "A",
+      "dx": -0.5,
+      "dy": -0.5,
+      "channel": "Fluorescence_488_nm_Ex",
+      "exposure_ms": 30,
+      "intensity": 20,
+      "timestamp_utc": "20260930T204218080055Z",
+      "full": "survey_frames\\optimization\\plate_A\\well_B11\\paired_best\\20260930T204218080055Z_Fluorescence_488_nm_Ex_30ms_20i.png",
+      "thumbnail": "survey_frames\\optimization\\plate_A\\well_B11\\paired_best\\20260930T204218080055Z_Fluorescence_488_nm_Ex_30ms_20i_thumb.png",
+      "image_id": "da1b4362fefc5ecc",
+      "position_mm": {
+        "x": 94.446725,
+        "y": 18.446749999999998,
+        "z": 5.4215625
+      },
+      "width": 2084,
+      "height": 2084,
+      "light_budget": {
+        "well_used": 8600.0,
+        "well_budget": 200000.0,
+        "well_remaining": 191400.0,
+        "well_frames_left_at_this_setting": 319,
+        "host_on_time_s": 5.0,
+        "host_on_time_budget_s": 1800.0
+      }
+    },
+    {
+      "well": "B11",
+      "plate": "A",
+      "dx": -0.5,
+      "dy": -0.5,
+      "channel": "BF_LED_matrix_full",
+      "exposure_ms": 20,
+      "intensity": 20,
+      "timestamp_utc": "20260930T204220358752Z",
+      "full": "survey_frames\\optimization\\plate_A\\well_B11\\paired_best\\20260930T204220358752Z_BF_LED_matrix_full_20ms_20i.png",
+      "thumbnail": "survey_frames\\optimization\\plate_A\\well_B11\\paired_best\\20260930T204220358752Z_BF_LED_matrix_full_20ms_20i_thumb.png",
+      "image_id": "675dc19728d824f5",
+      "position_mm": {
+        "x": 94.446725,
+        "y": 18.446749999999998,
+        "z": 5.4215625
+      },
+      "width": 2084,
+      "height": 2084,
+      "light_budget": {
+        "well_used": 15200.0,
+        "well_budget": 2000000.0,
+        "well_remaining": 1984800.0,
+        "well_frames_left_at_this_setting": 4962,
+        "host_on_time_s": 16.0,
+        "host_on_time_budget_s": null
+      }
+    }
+  ],
+  "analysis_note": "Visual inspection required; quantitative metrics must use full-resolution images."
+}

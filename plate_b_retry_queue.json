@@ -1,0 +1,23 @@
+{
+  "status": "queued",
+  "created_utc": "2026-09-30T00:00:00Z",
+  "request": "Retry 3x3 fluorescence grids for plate B wells B11 and B12 when plate B becomes available",
+  "candidate_plate_identifiers": ["B", "PD260929CTB", "squid+4"],
+  "wells": ["B11", "B12"],
+  "grid": [[-0.5,-0.5],[0,-0.5],[0.5,-0.5],[-0.5,0],[0,0],[0.5,0],[-0.5,0.5],[0,0.5],[0.5,0.5]],
+  "channel": "Fluorescence_488_nm_Ex",
+  "exposure_ms": 30,
+  "intensity": 20,
+  "output_root": "fluorescence/B",
+  "requirements": [
+    "Verify GET /v1/status with a valid plate-B identifier before imaging",
+    "Read and save result.scale.pixel_size_um and result.scale.fov_um",
+    "Autofocus once per well before the first snap",
+    "Use atomic dx/dy on snap; never move then snap",
+    "Use a 30-second timeout for the first fluorescence snap",
+    "Back off on 429/503 and honor retry_after_s",
+    "Save full-resolution frames, thumbnails, and per-frame metadata",
+    "Stop and record status if all plate identifiers remain unavailable"
+  ],
+  "note": "This file is a persistent request record only. It does not run autonomously while the agent is offline. Ask to process the queue or run the queue worker when ready."
+}

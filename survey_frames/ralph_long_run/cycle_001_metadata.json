@@ -1,0 +1,214 @@
+[
+  {
+    "iteration": 1,
+    "plate": "A",
+    "well": "B11",
+    "dx": -0.5,
+    "dy": -0.5,
+    "frames": [
+      {
+        "channel": "BF_LED_matrix_full",
+        "full": "survey_frames\\ralph_long_run\\iteration_001\\20260930T225644223189Z_A_B11_dx-0.5_dy-0.5_BF_LED_matrix_full.png",
+        "thumbnail": "survey_frames\\ralph_long_run\\iteration_001\\20260930T225644223189Z_A_B11_dx-0.5_dy-0.5_BF_LED_matrix_full_thumb.png",
+        "timestamp_utc": "20260930T225644223189Z",
+        "position_mm": {
+          "x": 94.446725,
+          "y": 18.446749999999998,
+          "z": 5.41978125
+        },
+        "scale": {
+          "pixel_size_um": 0.376,
+          "fov_um": [
+            783.6,
+            783.6
+          ]
+        },
+        "settings": {
+          "exposure_ms": 20,
+          "intensity": 20
+        }
+      },
+      {
+        "channel": "Fluorescence_488_nm_Ex",
+        "full": "survey_frames\\ralph_long_run\\iteration_001\\20260930T225648862711Z_A_B11_dx-0.5_dy-0.5_Fluorescence_488_nm_Ex.png",
+        "thumbnail": "survey_frames\\ralph_long_run\\iteration_001\\20260930T225648862711Z_A_B11_dx-0.5_dy-0.5_Fluorescence_488_nm_Ex_thumb.png",
+        "timestamp_utc": "20260930T225648862711Z",
+        "position_mm": {
+          "x": 94.446725,
+          "y": 18.446749999999998,
+          "z": 5.41978125
+        },
+        "scale": {
+          "pixel_size_um": 0.376,
+          "fov_um": [
+            783.6,
+            783.6
+          ]
+        },
+        "settings": {
+          "exposure_ms": 30,
+          "intensity": 20
+        }
+      }
+    ]
+  },
+  {
+    "iteration": 2,
+    "plate": "A",
+    "well": "B12",
+    "dx": -0.5,
+    "dy": -0.5,
+    "frames": [
+      {
+        "channel": "BF_LED_matrix_full",
+        "full": "survey_frames\\ralph_long_run\\iteration_002\\20260930T225702445818Z_A_B12_dx-0.5_dy-0.5_BF_LED_matrix_full.png",
+        "thumbnail": "survey_frames\\ralph_long_run\\iteration_002\\20260930T225702445818Z_A_B12_dx-0.5_dy-0.5_BF_LED_matrix_full_thumb.png",
+        "timestamp_utc": "20260930T225702445818Z",
+        "position_mm": {
+          "x": 103.44705625,
+          "y": 18.446749999999998,
+          "z": 5.419875
+        },
+        "scale": {
+          "pixel_size_um": 0.376,
+          "fov_um": [
+            783.6,
+            783.6
+          ]
+        },
+        "settings": {
+          "exposure_ms": 20,
+          "intensity": 20
+        }
+      },
+      {
+        "channel": "Fluorescence_488_nm_Ex",
+        "full": "survey_frames\\ralph_long_run\\iteration_002\\20260930T225707502289Z_A_B12_dx-0.5_dy-0.5_Fluorescence_488_nm_Ex.png",
+        "thumbnail": "survey_frames\\ralph_long_run\\iteration_002\\20260930T225707502289Z_A_B12_dx-0.5_dy-0.5_Fluorescence_488_nm_Ex_thumb.png",
+        "timestamp_utc": "20260930T225707502289Z",
+        "position_mm": {
+          "x": 103.44705625,
+          "y": 18.446749999999998,
+          "z": 5.419875
+        },
+        "scale": {
+          "pixel_size_um": 0.376,
+          "fov_um": [
+            783.6,
+            783.6
+          ]
+        },
+        "settings": {
+          "exposure_ms": 30,
+          "intensity": 20
+        }
+      }
+    ]
+  },
+  {
+    "iteration": 3,
+    "plate": "B",
+    "well": "B11",
+    "dx": -0.5,
+    "dy": -0.5,
+    "frames": [
+      {
+        "channel": "BF_LED_matrix_full",
+        "full": "survey_frames\\ralph_long_run\\iteration_003\\20260930T225720038864Z_B_B11_dx-0.5_dy-0.5_BF_LED_matrix_full.png",
+        "thumbnail": "survey_frames\\ralph_long_run\\iteration_003\\20260930T225720038864Z_B_B11_dx-0.5_dy-0.5_BF_LED_matrix_full_thumb.png",
+        "timestamp_utc": "20260930T225720038864Z",
+        "position_mm": {
+          "x": 94.22050625,
+          "y": 17.2593,
+          "z": 3.460875
+        },
+        "scale": {
+          "pixel_size_um": 0.376,
+          "fov_um": [
+            783.6,
+            783.6
+          ]
+        },
+        "settings": {
+          "exposure_ms": 20,
+          "intensity": 20
+        }
+      },
+      {
+        "channel": "Fluorescence_488_nm_Ex",
+        "full": "survey_frames\\ralph_long_run\\iteration_003\\20260930T225724229816Z_B_B11_dx-0.5_dy-0.5_Fluorescence_488_nm_Ex.png",
+        "thumbnail": "survey_frames\\ralph_long_run\\iteration_003\\20260930T225724229816Z_B_B11_dx-0.5_dy-0.5_Fluorescence_488_nm_Ex_thumb.png",
+        "timestamp_utc": "20260930T225724229816Z",
+        "position_mm": {
+          "x": 94.22050625,
+          "y": 17.2593,
+          "z": 3.460875
+        },
+        "scale": {
+          "pixel_size_um": 0.376,
+          "fov_um": [
+            783.6,
+            783.6
+          ]
+        },
+        "settings": {
+          "exposure_ms": 30,
+          "intensity": 20
+        }
+      }
+    ]
+  },
+  {
+    "iteration": 4,
+    "plate": "B",
+    "well": "B12",
+    "dx": -0.5,
+    "dy": -0.5,
+    "frames": [
+      {
+        "channel": "BF_LED_matrix_full",
+        "full": "survey_frames\\ralph_long_run\\iteration_004\\20260930T225731406454Z_B_B12_dx-0.5_dy-0.5_BF_LED_matrix_full.png",
+        "thumbnail": "survey_frames\\ralph_long_run\\iteration_004\\20260930T225731406454Z_B_B12_dx-0.5_dy-0.5_BF_LED_matrix_full_thumb.png",
+        "timestamp_utc": "20260930T225731406454Z",
+        "position_mm": {
+          "x": 103.22004375,
+          "y": 17.2593,
+          "z": 3.45496875
+        },
+        "scale": {
+          "pixel_size_um": 0.376,
+          "fov_um": [
+            783.6,
+            783.6
+          ]
+        },
+        "settings": {
+          "exposure_ms": 20,
+          "intensity": 20
+        }
+      },
+      {
+        "channel": "Fluorescence_488_nm_Ex",
+        "full": "survey_frames\\ralph_long_run\\iteration_004\\20260930T225736165825Z_B_B12_dx-0.5_dy-0.5_Fluorescence_488_nm_Ex.png",
+        "thumbnail": "survey_frames\\ralph_long_run\\iteration_004\\20260930T225736165825Z_B_B12_dx-0.5_dy-0.5_Fluorescence_488_nm_Ex_thumb.png",
+        "timestamp_utc": "20260930T225736165825Z",
+        "position_mm": {
+          "x": 103.22004375,
+          "y": 17.2593,
+          "z": 3.45496875
+        },
+        "scale": {
+          "pixel_size_um": 0.376,
+          "fov_um": [
+            783.6,
+            783.6
+          ]
+        },
+        "settings": {
+          "exposure_ms": 30,
+          "intensity": 20
+        }
+      }
+    ]
+  }
+]

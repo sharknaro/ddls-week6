@@ -1,0 +1,12 @@
+Completed exactly one approved short cycle: exploratory slot 5.
+
+- **Station:** Plate A, well B11, `dx=-0.5`, `dy=0.5`
+- **Sequence:** Status → autofocus → BF → fluorescence
+- **Scale:** `0.376 µm/px`; FOV `783.6 × 783.6 µm`
+- **Frames:** Saved unique full-resolution images and thumbnails under:
+  `survey_frames/ralph_validation/iteration_5/plate_A/well_B11/`
+- **Inspection:** BF was valid and nonblank. Fluorescence showed bright objects with localized saturation (~1.03% of pixels); no fluorescence measurement was made.
+- **Measurement:** One BF spot-check: 100 px × 0.376 = **37.600 µm**
+- **Logs updated:** `RALPH_PROGRESS.md` and `OPEN_QUESTIONS.md`
+
+Session stopped after this cycle.

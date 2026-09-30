@@ -1,0 +1,14 @@
+Completed exactly slot 6.
+
+- Station: owned plate A / well B11, atomic `dx=-0.5`, `dy=0.5`
+- Status scale: `pixel_size_um=0.376`; `fov_um=[783.6, 783.6]`
+- Autofocus completed before acquisition
+- BF acquired first and validated
+- FL started at `30 ms × 20`; saturated highlights observed
+- Exactly one retry at `20 ms × 20`; still saturated and marked unusable
+- Full-resolution images and thumbnails saved uniquely under:
+  `survey_frames/ralph_validation/iteration_6/plate_A/well_B11/`
+- One BF measurement recorded: `100 px = 37.600 µm`, manually spot-checked
+- Appended exactly one slot 6 result to `RALPH_PROGRESS.md`
+- Appended exactly one testable update to `OPEN_QUESTIONS.md`
+- No other iteration or pacing command run
