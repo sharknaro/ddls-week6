@@ -1,0 +1,364 @@
+{
+  "plate": "A",
+  "well": "B11",
+  "dx": -0.5,
+  "dy": -0.5,
+  "status": {
+    "response": {
+      "ok": true,
+      "well": "-",
+      "host": "squid+3",
+      "plate": "PD260929CTA",
+      "plate_letter": "A",
+      "your_plate_counts": {
+        "squid+3": 106,
+        "squid+4": 135
+      },
+      "result": {
+        "stage": {
+          "position_mm": {
+            "x": 43.552268749999996,
+            "y": 10.067924999999999,
+            "z": 5.41003125,
+            "theta": 0.0
+          },
+          "limits_mm": {
+            "x": [
+              10.0,
+              112.5
+            ],
+            "y": [
+              6.0,
+              76.0
+            ],
+            "z": [
+              5.1,
+              5.7
+            ]
+          },
+          "velocity_mm_per_s": {
+            "x": null,
+            "y": null
+          },
+          "limits_note": "the ENFORCED envelope (concave hull), and z is YOUR permitted band. Your own per-well boxes are in GET /v1/me \u2014 those are what bound you"
+        },
+        "well": {
+          "plate_type": "96",
+          "row": "A",
+          "column": 5,
+          "in_well": true,
+          "center_offset_mm": null
+        },
+        "objective": {
+          "current": "20x",
+          "available": [
+            "20x",
+            "4x"
+          ],
+          "pixel_size_um": 0.376
+        },
+        "illumination": {
+          "is_on": false,
+          "current_channel": "BF_LED_matrix_full",
+          "current_intensity_pct": 100,
+          "channel_defaults": {
+            "BF_LED_matrix_full": {
+              "intensity": 20.0,
+              "exposure_ms": 20.0,
+              "note": "what YOU get if you omit these fields"
+            },
+            "Fluorescence_488_nm_Ex": {
+              "intensity": 20.0,
+              "exposure_ms": 30.0,
+              "note": "what YOU get if you omit these fields"
+            }
+          },
+          "channels_available_to_you": [
+            "BF_LED_matrix_full",
+            "Fluorescence_488_nm_Ex"
+          ]
+        },
+        "camera": {
+          "current_exposure_ms": 100,
+          "image_shape": [
+            2084,
+            3104
+          ],
+          "crop_shape": [
+            2084,
+            2084
+          ],
+          "fov_mm": {
+            "w": 0.783584,
+            "h": 0.783584
+          },
+          "dtype": "uint8",
+          "last_snap_at": "2026-10-01T11:51:28+00:00",
+          "stream_clients": 0,
+          "stream": null,
+          "temperature": {
+            "has_TEC": true,
+            "has_fan": true,
+            "sensor_c": 19.9,
+            "target_c": 20.0,
+            "fan_speed": 1,
+            "tec_voltage_v": 1.2,
+            "tec_target_range_c": [
+              -50.0,
+              40.0
+            ],
+            "cache_age_s": 0.74
+          }
+        },
+        "busy": {
+          "any": false,
+          "hardware": false,
+          "scan_active": false,
+          "stream_active": false
+        },
+        "experiment": {
+          "active": null,
+          "available": []
+        },
+        "plate": {
+          "active_id": "PD260929CTA",
+          "calibrated": true,
+          "calibrated_at": "2026-09-29T14:31:54+00:00",
+          "rms_residual_um": 0.0,
+          "method": "theoretical",
+          "plate_type": "96",
+          "ir_sensor": {
+            "present": true,
+            "raw": 0,
+            "stage_xy_mm": [
+              43.552268749999996,
+              10.067924999999999
+            ],
+            "envelope_mm": {
+              "x_max": 60.0,
+              "y_max": 40.0
+            },
+            "coverage_mm": {
+              "x_min": 8.0,
+              "x_max": 35.0,
+              "y_min": 12.0,
+              "y_max": 30.0
+            },
+            "inside_envelope": true,
+            "inside_coverage": false,
+            "polarity_inverted": false,
+            "forced": false,
+            "reason": "present_outside_coverage_ok"
+          }
+        },
+        "transport_lock": {
+          "state": "unlocked",
+          "holder": null,
+          "reason": null,
+          "acquired_at": null
+        },
+        "autofocus_reference": {
+          "z_um": 5400.0,
+          "plate_id": null,
+          "set_at": "2026-09-29T14:29:13+00:00",
+          "method": "laser",
+          "stage_plate_id": "PD260929CTA",
+          "applies_to_loaded_plate": false,
+          "mismatch_reason": "af_reference_unvalidated_no_validator"
+        },
+        "identity_warn": {
+          "mode": "warn",
+          "decided": true,
+          "decided_at": "2026-07-28",
+          "decided_by": "Wei (operator directive, relayed via reef:chill-dolphin)",
+          "decision": "identity mismatch WARNS PERMANENTLY and never refuses; a missing plate-specific reference falls through to the microscope's current reference and records that it did",
+          "why": "a missing plate-specific reference is the NORMAL CASE, not an error; the microscope's current reference is the correct fallback. The cross-plate premise was never evidenced \u2014 the 47.9 um compared z_um, a provenance field no scan drives to, and a 6-well test showed x_reference transferring cleanly across 52.8 um of within-plate tilt.",
+          "sole_apriori_guard": "quality (#0069 set-time sweep) \u2014 identity no longer blocks",
+          "observations": {
+            "observations": 0,
+            "distinct_pairs": 0,
+            "target_met": false,
+            "with_focus_ratio": 0
+          },
+          "observations_note": "recorded for future analysis only \u2014 these no longer gate anything and there is no target to reach. focus_delta_um stays null until #0070."
+        },
+        "filter_wheel": {
+          "present": true,
+          "homed": true,
+          "current_position": 1,
+          "name": "Multiband",
+          "available_positions": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8
+          ],
+          "last_homed_at": "2026-09-29T14:10:12+00:00",
+          "last_op": "home",
+          "last_op_result": "ok"
+        },
+        "laser_engine": {
+          "present": true,
+          "port": "/dev/ttyACM0",
+          "lasers": [
+            {
+              "idx": 0,
+              "vendor_label": "405",
+              "channel": "Fluorescence_405_nm_Ex",
+              "alt_channels": [],
+              "state": "ACTIVE",
+              "warmup_required": false,
+              "warmup_s": 0.0,
+              "warmup_remaining_s": null,
+              "earliest_ready_at": null,
+              "ready": true,
+              "temp_c": 25.0,
+              "last_wake": null
+            },
+            {
+              "idx": 1,
+              "vendor_label": "470",
+              "channel": "Fluorescence_488_nm_Ex",
+              "alt_channels": [],
+              "state": "ACTIVE",
+              "warmup_required": false,
+              "warmup_s": 0.0,
+              "warmup_remaining_s": null,
+              "earliest_ready_at": null,
+              "ready": true,
+              "temp_c": 25.0,
+              "last_wake": {
+                "at": 1790855371.3529284,
+                "duration_s": 0.501,
+                "was_cold": false
+              }
+            },
+            {
+              "idx": 2,
+              "vendor_label": "638",
+              "channel": "Fluorescence_638_nm_Ex",
+              "alt_channels": [],
+              "state": "ACTIVE",
+              "warmup_required": false,
+              "warmup_s": 0.0,
+              "warmup_remaining_s": null,
+              "earliest_ready_at": null,
+              "ready": true,
+              "temp_c": 25.0,
+              "last_wake": null
+            },
+            {
+              "idx": 3,
+              "vendor_label": "730",
+              "channel": "Fluorescence_730_nm_Ex",
+              "alt_channels": [],
+              "state": "SLEEP",
+              "warmup_required": false,
+              "warmup_s": 0.0,
+              "warmup_remaining_s": null,
+              "earliest_ready_at": null,
+              "ready": false,
+              "temp_c": 26.83,
+              "last_wake": null
+            },
+            {
+              "idx": 4,
+              "vendor_label": "55x",
+              "channel": "Fluorescence_561_nm_Ex",
+              "alt_channels": [],
+              "state": "ACTIVE",
+              "warmup_required": true,
+              "warmup_s": 90.0,
+              "warmup_remaining_s": 0.0,
+              "earliest_ready_at": 1790855490.057,
+              "ready": true,
+              "temp_c": 29.8,
+              "last_wake": null
+            }
+          ]
+        },
+        "safety": {
+          "max_intensity_pct_matrix": 100,
+          "max_intensity_pct_fluor": 100,
+          "max_exposure_ms": 1000,
+          "max_frames_per_acquire": 12,
+          "refuse_below_lasing_threshold": true
+        },
+        "scale": {
+          "pixel_size_um": 0.376,
+          "image_px": [
+            2084,
+            2084
+          ],
+          "fov_um": [
+            783.6,
+            783.6
+          ],
+          "how_to_use": "multiply any pixel measurement by pixel_size_um to get micrometres. Every size claim depends on this number and it exists nowhere else.",
+          "note": "images are centre-cropped to a square; the sensor is wider than what you receive, so derive scale from these values, not from any sensor dimension."
+        }
+      },
+      "took_ms": 1788.4,
+      "position_mm": {
+        "x": 43.552268749999996,
+        "y": 10.067924999999999,
+        "z": 5.41003125
+      },
+      "your_z_is_restored_on_snap": true
+    },
+    "pixel_size_um": 0.376,
+    "fov_um": [
+      783.6,
+      783.6
+    ]
+  },
+  "autofocus": {
+    "ok": true,
+    "well": "B11",
+    "host": "squid+3",
+    "plate": "PD260929CTA",
+    "plate_letter": "A",
+    "your_plate_counts": {
+      "squid+3": 107,
+      "squid+4": 135
+    },
+    "result": {
+      "ok": true,
+      "reference_warnings": [
+        {
+          "code": "af_reference_unvalidated_no_validator",
+          "message": "the stored AF reference was never shown to be at focus (recorded before set-time validation existed). Laser AF reproduces whatever plane it was given, so a soft reference yields soft data on every well with no error raised. NOTE: this server cannot yet validate a reference at set time (#0069 sweep not wired), so this is reported as a WARNING rather than refused \u2014 refusing would demand proof no code path can produce, leaving no way to clear it"
+        }
+      ]
+    },
+    "took_ms": 3400.3,
+    "position_mm": {
+      "x": 95.99929999999999,
+      "y": 19.999325,
+      "z": 5.41771875
+    },
+    "your_z_is_restored_on_snap": true
+  },
+  "acquisitions": [
+    {
+      "channel": "BF_LED_matrix_full",
+      "paths": {
+        "full_resolution": "results\\snap_validation_20261001T115115Z\\pair\\plate_A\\well_B11\\20261001T115134Z_A_B11_BF_LED_matrix_full.png",
+        "thumbnail": "results\\snap_validation_20261001T115115Z\\pair\\plate_A\\well_B11\\20261001T115134Z_A_B11_BF_LED_matrix_full_thumb.png",
+        "metadata": "results\\snap_validation_20261001T115115Z\\pair\\plate_A\\well_B11\\20261001T115134Z_A_B11_BF_LED_matrix_full.json"
+      }
+    },
+    {
+      "channel": "Fluorescence_488_nm_Ex",
+      "paths": {
+        "full_resolution": "results\\snap_validation_20261001T115115Z\\pair\\plate_A\\well_B11\\20261001T115136Z_A_B11_Fluorescence_488_nm_Ex.png",
+        "thumbnail": "results\\snap_validation_20261001T115115Z\\pair\\plate_A\\well_B11\\20261001T115136Z_A_B11_Fluorescence_488_nm_Ex_thumb.png",
+        "metadata": "results\\snap_validation_20261001T115115Z\\pair\\plate_A\\well_B11\\20261001T115136Z_A_B11_Fluorescence_488_nm_Ex.json"
+      }
+    }
+  ]
+}

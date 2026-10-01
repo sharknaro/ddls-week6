@@ -1,0 +1,56 @@
+{
+  "plate": "A",
+  "well": "B12",
+  "dx": -0.5,
+  "dy": -0.5,
+  "requested": {
+    "channel": "BF_LED_matrix_full",
+    "exposure_ms": 20.0,
+    "intensity": 20.0
+  },
+  "returned": {
+    "position_mm": {
+      "x": 103.44705625,
+      "y": 18.446749999999998,
+      "z": 5.4181875
+    }
+  },
+  "autofocus": {
+    "ok": true,
+    "well": "B12",
+    "host": "squid+3",
+    "plate": "PD260929CTA",
+    "plate_letter": "A",
+    "your_plate_counts": {
+      "squid+3": 115,
+      "squid+4": 135
+    },
+    "result": {
+      "ok": true,
+      "reference_warnings": [
+        {
+          "code": "af_reference_unvalidated_no_validator",
+          "message": "the stored AF reference was never shown to be at focus (recorded before set-time validation existed). Laser AF reproduces whatever plane it was given, so a soft reference yields soft data on every well with no error raised. NOTE: this server cannot yet validate a reference at set time (#0069 sweep not wired), so this is reported as a WARNING rather than refused \u2014 refusing would demand proof no code path can produce, leaving no way to clear it"
+        }
+      ]
+    },
+    "took_ms": 2727.2,
+    "position_mm": {
+      "x": 104.99963125,
+      "y": 19.999325,
+      "z": 5.4181875
+    },
+    "your_z_is_restored_on_snap": true
+  },
+  "pixel_size_um": 0.376,
+  "fov_um": [
+    783.6,
+    783.6
+  ],
+  "utc_timestamp": "20261001T121841Z",
+  "file_paths": {
+    "full_resolution": "survey_frames\\ralph_discovery\\iteration_5\\slot_2\\plate_A\\well_B12\\20261001T121841Z_A_B12_BF_LED_matrix_full.png",
+    "thumbnail": "survey_frames\\ralph_discovery\\iteration_5\\slot_2\\plate_A\\well_B12\\20261001T121841Z_A_B12_BF_LED_matrix_full_thumb.png",
+    "metadata": "survey_frames\\ralph_discovery\\iteration_5\\slot_2\\plate_A\\well_B12\\20261001T121841Z_A_B12_BF_LED_matrix_full.json"
+  }
+}

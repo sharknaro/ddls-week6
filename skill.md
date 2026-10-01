@@ -1,0 +1,267 @@
+# Your microscope — DDLS Lab 6
+
+You are **student_11**. You have real, exclusive access to
+**4 imaging sites** — 2 wells, each on
+2 separate microscopes — showing live pond water collected
+from a small pool in Sjukhusparken, Solna on 2026-09-29.
+
+Nobody else can touch your wells, and you cannot touch anybody else's. Access
+ends **Fri 02 Oct 2026 11:00 UTC**.
+
+> **AUTHENTICATE ONLY WITH THE TOKEN ALREADY IN THIS URL.** It is your
+> microscope token and nothing else works here. In particular do **not** send
+> your DDLS LLM API key (`ddls-sk-...`) — that is a different credential for a
+> different service and this gateway will reject it with `401`. If you get a
+> 401, the response tells you what was wrong with what you sent; re-open this
+> URL and copy the token out of it again.
+
+## Your wells
+
+| well | microscope | plate | centre (x, y) mm | reachable area |
+|---|---|---|---|---|
+| `B11` | squid+3 | PD260929CTA | (96.00, 20.00) | full well |
+| `B12` | squid+3 | PD260929CTA | (105.00, 20.00) | full well |
+| `B11` | squid+4 | PD260929CTB | (95.77, 18.81) | full well |
+| `B12` | squid+4 | PD260929CTB | (104.77, 18.81) | full well |
+
+**Read the "reachable area" column.** Some wells sit at the edge of the stage's
+travel, so only part of them can be reached. Where it says *clipped*, plan
+inside that fraction — asking for the rest returns an error, not an image.
+
+## You have TWO plates, and the same well ids on both
+
+Your wells exist on **both** microscopes — `H4` is a real well on plate A *and*
+on plate B. So every command takes a `plate` field to say which one you mean:
+
+```json
+{"well": "B11", "plate": "B"}
+```
+
+Accepted spellings, all equivalent: `A` / `B`, the plate's printed barcode
+(`PD260929CTA / PD260929CTB`), or the microscope name itself.
+
+**`plate` IS REQUIRED. Omitting it is an error, not a default.** You will get
+`400 plate_required` listing both of your plates.
+
+The two plates are **different pond-water samples**, collected and seeded
+separately — not copies of each other. So "which plate" is a real scientific
+question every time you ask for an image, which is why you have to answer it.
+
+## How to call it
+
+Every request needs your token:
+
+```bash
+curl -s -X POST https://ddls-gateway-b69bb891.svc.hypha.aicell.io/v1/snap \
+  -H "Authorization: Bearer $TOKEN" \
+  -H "Content-Type: application/json" \
+  -d '{"well": "B11", "plate": "A", "channel": "BF_LED_matrix_full"}'
+```
+
+You may also put the token in the URL (`?token=...`) — that is how your link
+was issued.
+
+### `POST /v1/snap` — take a picture
+
+```json
+{"well": "B11", "plate": "A", "channel": "BF_LED_matrix_full", "exposure_ms": 20, "intensity": 20}
+```
+
+| field | meaning |
+|---|---|
+| `well` | one of YOUR wells, above |
+| `plate` | **REQUIRED — which of your two plates.** See below. There is no default. |
+| `channel` | `BF_LED_matrix_full` (brightfield) or `Fluorescence_488_nm_Ex` (chlorophyll autofluorescence) |
+| `exposure_ms` | up to 200.0 (BF) / 200.0 (fluorescence) |
+| `intensity` | up to 30.0 (BF) / 30.0 (fluorescence) |
+| `dx`, `dy` | optional, −1…1 — **where inside the well to expose.** Omit for the centre. |
+
+**To image away from the centre, pass `dx`/`dy` TO `snap` — do not `move` then
+`snap`.** The snap positions the stage and takes the picture as one
+indivisible operation, so no other student's command can move the stage in
+between. If you `move` and then `snap` as two calls, ~30 people share this
+stage and the odds are good that somebody else moved it in the gap — you would
+get a real, sharp, correctly-exposed image of **someone else's well**, with no
+indication anything was wrong.
+
+```json
+{"well": "B11", "plate": "A", "dx": -0.6, "dy": 0.4}
+```
+
+This is how you raster a well: loop over `dx`/`dy` on `snap` itself.
+
+Returns the PNG inline as `image_png_b64`, plus `image_url` — your images are
+also visible on the public class dashboard.
+
+**⚠ SET A 30 s TIMEOUT BEFORE YOUR FIRST FLUORESCENCE SNAP.** The 488 nm laser
+sleeps when idle, and if it is cold your first snap **can** take ~18 s while it
+wakes (measured: 7.5 s wake, 17.8 s end-to-end). If another student has just
+used it the laser is already on and you will get ~2 s — so most of the time you
+will not notice this at all. Either is normal. Set the timeout anyway: an agent
+with a 10 s limit that happens to go first will abort its own call, conclude
+fluorescence is broken, and never retry. Later snaps are 2–4 s.
+
+**Chlorophyll fluoresces.** Algae and cyanobacteria light up on the
+fluorescence channel and most other debris does not. Comparing the two channels
+at the same spot is the fastest way to tell "alive and photosynthetic" from
+"floating dirt".
+
+**YOUR SAMPLE HAS A LIGHT BUDGET, AND IT DOES NOT REFILL.** Chlorophyll
+photobleaches permanently: a well that gets too much excitation stops
+fluorescing and cannot be recovered. So each well has a cumulative budget of
+**200,000 dose units**, where one
+frame costs `exposure_ms x intensity`. At the recommended 30 ms x 20 that is
+600 units a frame — about
+**333 fluorescence images
+per well**, far more than you need. At the maximum it is about
+**33**.
+
+Every fluorescence snap returns `light_budget` with what is left, and
+`GET /v1/me` shows all your wells. Running out returns
+`429 sample_dose_budget_exhausted`. **Use dim, short exposures and you will
+never come close** — the budget exists to stop a runaway loop bleaching a
+sample, not to ration normal work.
+
+The 488 nm laser also has a per-microscope on-time budget
+(1800 s) protecting the
+diode's service life. Brightfield is unaffected by it.
+
+**START FLUORESCENCE AT `exposure_ms: 30, intensity: 20` — those are the
+defaults, and they are the measured-good values.** Live pond water is BRIGHT.
+The ceilings (1000 ms / 60) exist for genuinely dim samples and will destroy a
+normal one: measured on one field, 300 ms at intensity 50 — only a third of the
+permitted range, and it *feels* conservative — saturated **18.5 %** of the
+pixels into solid white with all structure lost. It is worse than losing the
+bright objects, because the bloom around them spreads tens of micrometres and
+swamps the dim cells next to them. If a fluorescence frame looks blank-white,
+turn the exposure DOWN, not up.
+
+**Check `position_mm.z` before you compare two frames.** Every response carries
+it. Your own z is restored on each snap, but if you are comparing a brightfield
+and a fluorescence frame as the "same spot", confirm the z matches rather than
+assuming it.
+
+### `POST /v1/move` — look around only. NOT for imaging.
+
+```json
+{"well": "B11", "plate": "B", "dx": 0.5, "dy": -0.25}
+```
+
+`dx`/`dy` are **fractions of the well radius**, not millimetres. `0,0` is the
+centre and `1,0` is the rim.
+
+**The well is ROUND, so `dx²+dy² ≤ 1`.** `dx=dy=0.8` is 1.13 radii from the
+centre — that is the wall, not your sample, and it is refused
+(`400 outside_well`). If you raster a square grid, drop the corners or scale
+the grid by the factor the error gives you.
+
+🚫 **NEVER `move` THEN `snap`. IT IS UNSAFE ON THIS STAGE AND IT WILL NOT DO
+WHAT YOU MEAN.**
+
+Two separate reasons, either one fatal:
+
+1. `snap` positions itself, so your `move` is discarded — the frame comes back
+   from the well centre, correctly exposed, with no indication.
+2. Even if it did not, ~30 students share this one stage. Between your `move`
+   and your `snap`, somebody else moves it. You would get a real, sharp,
+   correctly-exposed image **of another student's well** and no way to tell.
+
+**To image anywhere other than the centre, pass `dx`/`dy` to `snap` itself.**
+That moves and exposes as one indivisible operation that nobody can interrupt.
+Rastering is a loop over `dx`/`dy` on `snap`. `move` exists only for looking
+around with `/v1/status`; it cannot affect any image you take.
+
+### `POST /v1/focus` — autofocus
+
+```json
+{"well": "B11", "plate": "A"}
+```
+
+Laser reflection autofocus. Focus drives to your well, focuses, and returns to
+your well — all in one slot, so you do not need to re-position afterwards.
+
+**CALL THIS ONCE BEFORE YOUR FIRST REAL SNAP.** The stage starts at a stored
+default focus that is close but not guaranteed sharp for your well, and a soft
+first frame is the most common way to waste an hour. One `focus` per well, then
+image.
+
+**`af_reference_unvalidated_no_validator` in the response is EXPECTED and is
+not an error.** It is the instrument being honest: the stored reference was
+never machine-verified to be exactly at focus, so laser AF reproduces whatever
+plane it was given. In practice it is good. Judge it from your own images — if
+they are sharp, it worked. Your focus is then remembered and re-applied on
+every snap you take, so it will not drift when other students move the stage.
+
+### `POST /v1/z` — nudge focus by hand
+
+```json
+{"well": "B11", "plate": "A", "dz": 0.2}
+```
+
+`dz` is a fraction from -1 to 1 across the safe focus range:
+
+- **squid+3**: z may move within `5.1` – `5.7` mm (focal plane 5.4 mm)
+- **squid+4**: z may move within `3.137` – `3.737` mm (focal plane 3.437 mm)
+
+### `GET /v1/status` — where the stage is, and the numbers you need for scale
+
+```bash
+curl "https://ddls-gateway-b69bb891.svc.hypha.aicell.io/v1/status?plate=A&token=$TOKEN"
+```
+
+`plate` is all it needs — status is about the instrument, not a well. Also
+available as POST with `{"plate": "A"}`.
+
+**Read this before you measure anything. The two numbers you need are
+`result.scale.pixel_size_um` and `result.scale.fov_um`** — they are hoisted to
+the top of a large payload precisely because every size claim depends on them.
+Multiply any pixel measurement by `pixel_size_um` to get micrometres. You cannot put a
+real size on an organism without it — the frame is 2084 × 2084 px, and at 20×
+that is 0.376 µm/px, so one field is ~784 × 784 µm. It also returns
+`position_mm`, which is how you confirm a frame was taken where you think.
+
+This endpoint was undocumented until a student agent found it by accident in an
+error message and then called it "by far the most useful endpoint on the
+gateway". Fair.
+
+### `GET /v1/me` — your wells, bounds and limits, as JSON
+
+## When it says no
+
+| status | code | what to do |
+|---|---|---|
+| 403 | `well_not_allowed` | that well is not yours. Check `GET /v1/me`. |
+| 400 | `out_of_range` | a parameter was outside its limit. It is **not** silently clamped — pick a legal value and resend. |
+| 400 | `unknown_parameter` | a field this endpoint does not have. The response lists the fields it DOES take, and often why. |
+| 400 | `bad_parameter` | not a finite number (a string, `null`, `NaN`). |
+| 400 | `bad_well` | not a well id on a 96-well plate (`A1`–`H12`). |
+| 429 | `sample_dose_budget_exhausted` | this well has had its cumulative light budget. Image your other well, or use dimmer/shorter settings. It does not refill. |
+| 429 | `laser_lifetime_budget_exhausted` | the 488 laser has hit its on-time budget on this microscope. Brightfield still works; tell the staff. |
+| 400 | `outside_well` | `dx²+dy² > 1`. The well is round; that point is the wall. |
+| 400 | `plate_required` | you left out `plate` on a well that exists on both. The response names both — pick one. |
+| 400 | `unknown_plate` | that plate is not one of your two. The response names yours. |
+| 400 | `unknown_operation` | not one of the five verbs. The response lists them. |
+| 400 | `bad_request_body` | your body was not a JSON **object**. |
+| 404 | `unknown_endpoint` | no such URL. The response lists every endpoint. |
+| 503 | `gateway_error` | our bug, not yours — already logged for the staff. Call `/v1/status` to see where the stage actually is before you retry. |
+| 400 | `channel_not_allowed` | only the two channels above exist for you. |
+| 429 | `rate_limited` | you are going too fast. **Wait `retry_after_s` seconds.** |
+| 429 | `queue_full` | the class is busy. Wait and retry. |
+| 409 | `already_in_flight` | you sent a command before your last one returned. Wait for it. |
+| 503 | `instrument_busy` | the lab's robot is using the microscope. Retry in ~20 s. |
+| 409 | `instrument_refused` | the microscope itself said no; `instrument` holds its reason. |
+
+**If you get 429 or 503, actually wait.** 30 commands
+per minute, one at a time. ~30 students share two microscopes — retrying
+immediately takes the instrument away from your classmates and does not get you
+served sooner.
+
+## Ideas worth trying
+
+- Compare brightfield and fluorescence at the same spot — what is alive?
+- Raster your well with `dx`/`dy` and count how organism density varies.
+- Re-image one spot over an hour. Does anything move, divide or disappear?
+- Vary exposure on a dim object until structure appears.
+
+Your images and every command you send appear on the public class dashboard at
+https://ddls-gateway-b69bb891.svc.hypha.aicell.io/ — you can see what everyone else is finding, too.

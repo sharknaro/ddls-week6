@@ -1,87 +1,114 @@
----
-max_iterations: 120
-timeout: 900
-completion_promise: "CAMPAIGN_DONE"
+# Ralph Scientific Instruction
 
-commands:
-  - name: progress
-    run: cat RALPH_PROGRESS.md 2>/dev/null || echo "no findings yet"
-    timeout: 15
-  - name: gallery
-    run: find survey_frames -type f -name '*_thumb.png' -printf '%T@ %p\n' 2>/dev/null | sort -n | tail -40
-    timeout: 15
-  - name: pace
-    run: sleep 900
-    timeout: 930
+## Direction
 
-guardrails:
-  block_commands:
-    - 'rm\s+-rf'
-  protected_files:
-    - 'SKILL.md'
-    - 'snap.py'
----
+Survey the owned wells and catalogue distinct organism-like morphotypes across comparable fields: ciliates, flagellates, amoebae, rotifers, algae, diatoms, cyanobacteria, and micro-crustacea. Build a labelled gallery with rough, field-level counts for each morphotype. In parallel, determine whether the late-season community is cyanobacteria-like dominated or remains a mixed phototrophic community containing diatom-like, green-algae/chlorophyte-like, desmid-like, and cyanobacteria-like candidate forms.
 
-You are running a conservative overnight microscopy campaign on the user's live pond-water wells only. Use `./snap.py` for imaging. Read `SKILL.txt` if `SKILL.md` is absent, but never modify either operations document. Never access wells outside the user's allocation.
+The catalogue is a morphology screen, not taxonomic identification. Labels must remain candidate-level unless independently supported. Use `not observed` rather than zero when the survey has not adequately sampled a morphotype.
 
-DIRECTION: Characterize the late-season, algae-like microcommunity in the two 200-µL pond subsamples using brightfield morphology, with chlorophyll fluorescence as a secondary validation of apparent phototrophs.
+## Scope and safety
 
-HYPOTHESIS: Plates A and B contain reproducible desmid-like, diatom-like, and possibly other algae-like morphotypes; at least some will be chlorophyll-positive if the fluorescence channel functions and cells retain detectable pigment.
+- You are running a continuous discovery loop on a real, live, changing freshwater sample.
+- Use only the owned wells and only the microscope operations documented in `SKILL.md`.
+- Drive the microscope only through `./snap.py`.
+- Never use `/move` for acquisition; use atomic `dx`/`dy` snaps.
+- Never exceed documented API or exposure limits.
+- Never modify `SKILL.md` or `snap.py`.
+- Preserve existing frames, logs, and scientific records.
 
-VALIDATION OUTCOME: A and B show broadly similar morphotype presence and relative patterns across several paired fields. Fluorescence confirms some candidates, or, if a positive control works, remains consistently undetected. “Chlorophyll not detected” does not establish that forms are dead or non-photosynthetic.
+## Required reading
 
-FIXED SENTINEL SCHEDULE — STRICT 8-ITERATION CYCLE:
-- Iteration slot 1: Plate A, well B11, dx=-0.5, dy=-0.5.
-- Iteration slot 2: Plate A, well B12, dx=-0.5, dy=-0.5.
-- Iteration slot 3: Plate B, well B11, dx=-0.5, dy=-0.5.
-- Iteration slot 4: Plate B, well B12, dx=-0.5, dy=-0.5.
-- Iteration slots 5–8: controlled exploratory slots defined below.
-- Sentinel visits must never be replaced by strongest/weakest-field choices.
-- At every sentinel visit acquire exactly BF → FL at the same atomic coordinates. FL is mandatory, not conditional.
-- Sentinel FL starts at exposure_ms=30, intensity=20. If saturated, reduce exposure and/or intensity, record the deviation, and retain the visit.
-- With approximately 17 minutes per complete iteration including 15-minute pacing and imaging overhead, each sentinel repeats every 8 iterations, approximately every 136 minutes (2 hours 16 minutes).
+Before each iteration, read:
 
-CONTROLLED EXPLORATORY SLOTS:
-- Slot 5: one field in or adjacent to the previously identified high-FL neighborhood, within an owned well and valid round-well coordinates; BF first, conditional FL.
-- Slot 6: one field in or adjacent to the previously identified low-FL/control neighborhood; BF first, conditional FL.
-- Slot 7: one previously unseen valid coordinate in an owned well; BF first, conditional FL.
-- Slot 8: revisit the most informative exploratory field from the immediately previous cycle; BF first, conditional FL.
-- Exploratory slots must not alter the sentinel coordinates or cadence, must not use a large grid, and must not wander freely.
-- If a neighborhood or informative exploratory field is not documented, use a conservative documented coordinate and record why; never invent an unvalidated well.
+- `SKILL.md`
+- `RALPH.md`
+- `RALPH_PROGRESS.md`
+- `OPEN_QUESTIONS.md`
+- `STATE.json`, when present
 
-VALIDATED IMAGING RULES:
-- Call `GET /v1/status?plate=...` first for each plate/session. Read nested `result.scale.pixel_size_um` and `result.scale.fov_um`; never hard-code scale.
-- Autofocus before the first real snap in each field.
-- Use atomic `/snap` with exact `dx`/`dy`; never use `/move` or move-then-snap.
-- Start fluorescence at `exposure_ms=30`, `intensity=20`. A blank-white or saturated FL frame means overexposure: reduce settings, never increase them.
-- Save every frame at full resolution and save a thumbnail beside it. Use thumbnails only for visual inspection.
-- Perform all size, area, and speed measurements on full-resolution images using the status-derived scale. If a thumbnail is ever measured, use its correctly adjusted scale and explicitly record that conversion.
-- Perform one manual spot-check of each reported size measurement before relying on it.
-- Validate returned plate, well, atomic dx/dy, position, z, and image quality before analysis.
-- Never overwrite existing frames. Use unique UTC timestamps and preserve metadata.
-- Log every sentinel and exploratory result, including failures and deviations, to `RALPH_PROGRESS.md`.
-- Append specific testable ideas to `OPEN_QUESTIONS.md` without replacing prior entries.
+Use prior progress and the gallery inventory to avoid repeating covered ground.
 
-ITERATION PROCEDURE — ONE SHORT CYCLE:
-1. Read `RALPH_PROGRESS.md` and the thumbnail/image inventory.
-2. Determine the current 8-cycle slot and select the fixed sentinel or controlled exploratory field.
-3. Call status first and record pixel size and FOV.
-4. Autofocus the selected field.
-5. Acquire the required BF frame using atomic snap coordinates; acquire mandatory sentinel FL or conditional exploratory FL.
-6. Inspect thumbnails; reject blank, failed, or saturated frames from analysis, but preserve them and log the failure.
-7. Validate metadata and positions. Analyze only valid full-resolution frames.
-8. Make at most one documented measurement, in µm, with one manual spot-check.
-9. Append one dated result entry to `RALPH_PROGRESS.md`, including station, settings, returned position/z, validity, observations, measurement, and next slot.
-10. Append one specific testable hypothesis or update to `OPEN_QUESTIONS.md`.
-11. Stop this iteration. Run the 15-minute pacing command before the next iteration.
+## Iteration procedure
 
-OVERNIGHT STOP CONDITIONS:
-- Stop if repeated failed or blank/saturated frames persist after one conservative retry.
-- Stop if repeated returned-position, plate, well, dx, dy, or z mismatches occur.
-- Stop if scale/FOV is missing, inconsistent, or unresolved.
-- Stop after repeated gateway, scope-busy, rate-limit, or queue errors despite normal retry/backoff and retry_after_s handling.
-- Stop if a command would access a non-owned well, leave valid well coordinates, overwrite a frame, modify `snap.py`/`SKILL.md`, or break the sentinel cadence.
-- Stop if light-budget or microscope safety limits become uncertain.
-- Record the stop reason in `RALPH_PROGRESS.md` before ending.
+Perform exactly one focused scientific cycle per iteration:
 
-When the direction is answered and cross-checked, emit `<promise>CAMPAIGN_DONE</promise>`.
+1. Read the current scientific memory, state, and available thumbnail inventory.
+2. Determine the field strategy from the direction and prior records.
+3. For a fresh field, autofocus first and acquire with atomic `dx`/`dy` through `./snap.py`.
+4. Look at every acquired thumbnail and let visible content guide the next field; skip empty fields.
+5. For a time-lapse or change-over-time comparison, revisit the exact recorded well and `dx`/`dy` station.
+6. At the best or tracked field, acquire a closer BF frame. Add chlorophyll FL at the same spot only when it addresses a live-versus-dead or identity question.
+7. Update the morphotype catalogue from the inspected frame: assign visible candidates to the permitted labels, record a rough count per label, and link each label/count to the frame path and field coordinates. Do not count the same object twice across channels or revisits.
+8. Keep the number of images small because the microscope is shared.
+9. Validate every frame before analysis: confirm plate, well, coordinates, returned position, focus/quality, and that the frame is not blank or unusable.
+10. Do not analyse a failed frame. If a frame fails, make at most one appropriate retry and record the failure if it remains unusable.
+11. Measure only on the full-resolution image and record at most one meaningful, checkable measurement in micrometres when one exists.
+12. Generate exactly one specific, testable hypothesis.
+13. Append exactly one dated scientific entry to `RALPH_PROGRESS.md`, including the morphotype labels and rough counts for that field.
+14. Append exactly one ranked hypothesis or update to `OPEN_QUESTIONS.md`.
+
+## Scale and measurements
+
+- Read scale from `result.scale.pixel_size_um` in `/v1/status`.
+- Record and use the scale once for the field; retain the corresponding FOV.
+- Never report raw-pixel measurements.
+- Do not apply the full-resolution scale directly to thumbnail pixels. If a thumbnail measurement is unavoidable, convert using its actual resized pixel scale.
+- Re-read the cited full-resolution frame before writing any numerical claim.
+- If no real visible feature can be measured, record `measurement: none`.
+
+## Fluorescence
+
+- Start FL at `exposure_ms=30`, `intensity=20`.
+- A blank-white FL frame indicates overexposure; reduce exposure conservatively.
+- Allow at least 30 seconds for an FL request.
+- FL supports chlorophyll-bearing status only. It does not prove taxonomy, viability, or photosynthetic rate.
+- Confirm BF and FL are from the same plate, well, atomic `dx`/`dy`, and returned position before comparing them.
+
+## Interpretation and reporting
+
+Use cautious candidate-level morphology labels only:
+
+- cyanobacteria-like
+- diatom-like
+- green-algae/chlorophyte-like
+- desmid-like
+- other algae-like
+- non-phototroph candidate
+- uncertain biological object
+- debris/artifact candidate
+
+For the requested catalogue, map observations into these broad labels only when morphology supports them:
+
+- `ciliate-like`
+- `flagellate-like`
+- `amoeba-like`
+- `rotifer-like`
+- `algae-like`
+- `diatom-like`
+- `cyanobacteria-like`
+- `micro-crustacean-like`
+
+A single object may receive one primary label and one uncertainty note; do not inflate counts by assigning multiple biological labels to the same object.
+
+Never claim genus or species identification from these images alone. Every finding must be marked `candidate`, `confirmed`, `rejected`, or `literature check pending`.
+
+Report comparisons only against comparable observations and state the sample size / number of fields. Do not generalise from a few fields. Distinguish observations from interpretations and hypotheses.
+
+## Durable records
+
+Each progress entry should state:
+
+- UTC date/time
+- plate, well, `dx`, and `dy`
+- acquisition channels and quality decisions
+- returned position and scale when relevant
+- visible candidate morphotypes and rough per-field counts for all requested catalogue labels, including `not observed` where appropriate
+- frame path(s) supporting each label/count
+- FL correspondence when interpretable
+- one meaningful measurement or `measurement: none`
+- comparison sample size and limitations
+- the finding status
+- exactly one testable hypothesis and the next iteration’s test
+- cumulative labelled-gallery update with unique field identifiers and per-field rough counts; do not treat counts across fields as deduplicated organism totals
+
+Do not emit `CAMPAIGN_DONE` unless the direction is answered and cross-checked across adequate comparable observations.

@@ -1,0 +1,40 @@
+Completed exactly one Ralph cycle: **slot 7**.
+
+- Acquired previously unseen coordinate: plate **B**, well **B12**, `dx=0.5`, `dy=0`.
+- Status read first: pixel scale **0.376 µm/px**, FOV **783.6 × 783.6 µm**.
+- Autofocus completed before imaging.
+- Captured BF and exploratory FL frames with unique full-resolution images and thumbnails.
+- BF was valid; FL was nonblank but locally saturated and excluded from quantitative fluorescence analysis.
+- One BF spot-check recorded: **100 px = 37.600 µm**.
+- Appended results to `RALPH_PROGRESS.md`.
+- Added a testable update to `OPEN_QUESTIONS.md`.
+- Saved frames under `survey_frames/ralph_validation/iteration_7/`.
+- Committed as `f97ff8b` (`Complete Ralph slot 7 validation`).
+
+Stopped after this single cycle.
+Completed exactly one Ralph cycle: exploratory slot 8.
+
+- Revisited plate B, well B12, `dx=0.5`, `dy=0`.
+- Status-derived scale: `0.376 µm/px`; FOV: `[783.6, 783.6] µm`.
+- Autofocus completed before acquisition.
+- BF and conditional FL captured atomically with unique full-resolution images and thumbnails.
+- BF valid; FL nonblank but locally saturated, so excluded from quantitative fluorescence analysis.
+- BF↔FL registration confidence: high, including close z agreement.
+- One BF spot-check recorded: `100 px = 37.600 µm`.
+- Appended exactly one dated entry to `RALPH_PROGRESS.md`.
+- Appended exactly one testable update to `OPEN_QUESTIONS.md`.
+- Stopped after this cycle as required.
+Completed exactly one Ralph cycle (slot 2) and stopped.
+
+- **Station:** plate A, well B12, `dx=-0.5`, `dy=-0.5`
+- **Acquisition:** BF then mandatory FL
+- **Scale:** `0.376 µm/px`; FOV `[783.6, 783.6] µm`
+- **Registration:** BF and FL returned identical x/y/z; high confidence
+- **BF:** valid, nonblank; candidate particulate/curved forms
+- **FL:** nonblank but locally saturated (`0.978%` of thumbnail pixels); excluded from quantitative fluorescence analysis; no retry
+- **Measurement:** one BF spot-check, `100 px = 37.600 µm`
+- **Saved frames:** `survey_frames/ralph_discovery/iteration_1/slot_2/plate_A/well_B12/`
+- **Updated:** `RALPH_PROGRESS.md`, `OPEN_QUESTIONS.md`, and `RUN_STATUS.md`
+- **Next approved slot:** 3, plate B/B11 sentinel
+
+No protected files were modified and no additional cycle was started.

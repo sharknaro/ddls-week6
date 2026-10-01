@@ -55,3 +55,35 @@ STEPS
 INFORMATION
 ===
 - Submit links/files in the portal with your Agent-A brainstorm and Pi transcripts. Keep it proportionate — this is a self-directed capstone, not a paper.
+
+===
+COMPUTATIONAL LAB MINUTES
+===
+
+===
+AGENT A
+===
+A senior phycologist has two live plates of pond water from a small Solna pool under the scope - with a chlorophyll-autofluorescence channel - and wants to brainstorm with you what's actually photosynthesising in there: green algae, desmids, cyanobacteria, diatoms. An open question checked against the real algal floras.
+
+Field: Phycology / freshwater algae & chlorophyll autofluorescence
+
+
+===
+BRAIN STORMING
+===
+I’ve got agent-driven time on a microscope with this pond sample and I want to find something genuinely interesting, not just re-count the obvious. If you were at the scope, what would you look for first — and what would actually surprise you?”
+
+“Can we sharpen that into something a loop can test in a couple of days? Give me one concrete, checkable version — a specific morphology, behaviour, or difference between the two plates I could quantify from images.”
+
+“What would make a finding here novel rather than textbook? And what’s the classic way people fool themselves with samples like this, so I can build a check against it?
+
+
+
+I would keep both aspects. I think between plates we can compute primary community-state metric: proportional chlorophyll-positive biovolume/area belonging to cyanobacteria-like, diatom-like and green-algal morphotypes. Then alongside it add community diversity: morphotype richness + Shannon diversity/evenness, while retaining: Total chlorophyll-positive biovolume per 200 µL equivalent as an abundance/biomass-type metric.
+
+That creates three dimensions: Composition — who dominates? Diversity — how heterogeneous is the community?
+Standing stock — how much photosynthetic material is present? If A and B (plates) agree on all three despite independent loading, that gives you much stronger confidence that your observed community state is technically reproducible.
+
+===
+
+Inpsect the highest-scoring field(s) from the previous 3×3 survey images located in ~/survey_frames/trial1, acquire a paired BF–FL comparison without changing the stage position between channels. First call `GET /v1/status?plate=...` and read `result.scale.pixel_size_um` and `result.scale.fov_um`; do not hard-code scale. Autofocus before the first real snap at each field. Then acquire a short sequence at the same `dx`/`dy`: BF1 → FL → BF2. Use `/v1/snap` with the same `dx`/`dy` for every acquisition; do not use `/v1/move` in the imaging loop. For fluorescence start at `exposure_ms=30`, `intensity=20`, allow ~30 s timeout for the first FL snap, and if the FL image is saturated/white reduce exposure or intensity rather than increasing them. Save all full-resolution frames, generate ~768 px thumbnails only for visual inspection, and keep timestamps, well, plate, `dx`, `dy`, channel, exposure, intensity, pixel size, and FOV with every frame. Do not make quantitative size measurements from thumbnail pixels using the full-resolution scale.
