@@ -79,16 +79,17 @@ def progress_entries() -> list[dict[str, str]]:
 def hypotheses() -> list[dict[str, str]]:
     text = read_markdown(QUESTIONS_PATH)
     rows: list[dict[str, str]] = []
-    # Supports markdown tables with columns such as rank, hypothesis, confidence/evidence.
+    # Prefer markdown tables, but also accept the project's "Rank N: ..." entries.
     for line in text.splitlines():
-        if "|" not in line or re.match(r"^\s*\|?\s*:?-+:?", line):
+        stripped = line.strip()
+        if "|" in stripped and not re.match(r"^\s*\|?\s*:?-+:?", stripped):
+            cells = [c.strip() for c in stripped.strip("|").split("|")]
+            if len(cells) >= 2 and not all(re.fullmatch(r":?-+:?", c) for c in cells) and cells[0].lower() not in {"rank", "#", "priority"}:
+                rows.append({"rank": cells[0], "hypothesis": cells[1], "evidence": " · ".join(cells[2:])})
             continue
-        cells = [c.strip() for c in line.strip().strip("|").split("|")]
-        if len(cells) < 2 or all(re.fullmatch(r":?-+:?", c) for c in cells):
-            continue
-        if cells[0].lower() in {"rank", "#", "priority"}:
-            continue
-        rows.append({"rank": cells[0], "hypothesis": cells[1], "evidence": " · ".join(cells[2:])})
+        match = re.match(r"^(?:[-*]\s*)?(?:Rank\s*)?(\d+)\s*[:.)-]\s*(.+)$", stripped, re.I)
+        if match:
+            rows.append({"rank": match.group(1), "hypothesis": match.group(2), "evidence": ""})
     return rows[:20]
 
 
