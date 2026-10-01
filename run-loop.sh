@@ -1,26 +1,27 @@
 #!/usr/bin/env bash
 set -Eeuo pipefail
 
-# Ralph fallback runner: 120 total iterations, with 4 sentinel iterations already complete.
+# Ralph fallback runner: a 24-hour wall-clock campaign.
 # This script launches one fresh Pi session per iteration and sleeps between sessions.
 # It does not modify snap.py or SKILL.md.
 
 ROOT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
-TOTAL_ITERATIONS=120
-COMPLETED_ITERATIONS=4
-REMAINING_ITERATIONS=$((TOTAL_ITERATIONS - COMPLETED_ITERATIONS))
+CAMPAIGN_DURATION_SECONDS=$((24 * 60 * 60))
+CAMPAIGN_END_EPOCH=$(( $(date +%s) + CAMPAIGN_DURATION_SECONDS ))
 PACE_SECONDS=900
+ITERATION=0
 
 cd "$ROOT_DIR"
 
-for ((run=1; run<=REMAINING_ITERATIONS; run++)); do
+while (( $(date +%s) < CAMPAIGN_END_EPOCH )); do
+  ITERATION=$((ITERATION + 1))
   progress_snapshot="$(cat RALPH_PROGRESS.md 2>/dev/null || printf 'no findings yet')"
   gallery_snapshot="$(find survey_frames -type f -name '*_thumb.png' -printf '%T@ %p\n' 2>/dev/null | sort -n | tail -40)"
 
   prompt=$(cat <<EOF
 You are one fresh Ralph validation session in project: $ROOT_DIR.
 
-This is fallback iteration $run of $REMAINING_ITERATIONS after four completed iterations. The campaign cap is exactly 120 total iterations; do not exceed it. Read RALPH.md completely and obey it. Read SKILL.txt only if SKILL.md is absent. Never modify snap.py or SKILL.md.
+This is Ralph iteration $ITERATION in a campaign ending at $(date -u -d "@$CAMPAIGN_END_EPOCH" '+%Y-%m-%dT%H:%M:%SZ'). Continue only while the 24-hour wall-clock campaign is active; do not start another cycle after the deadline. Read RALPH.md completely and obey it. Read SKILL.txt only if SKILL.md is absent. Never modify snap.py or SKILL.md.
 
 Use RALPH_PROGRESS.md as durable memory and determine the next approved slot from its dated entries. Use this thumbnail inventory as gallery evidence:
 $gallery_snapshot
@@ -56,7 +57,9 @@ EOF
 )
 
   pi --print "$prompt"
-  sleep "$PACE_SECONDS"
+  remaining=$((CAMPAIGN_END_EPOCH - $(date +%s)))
+  (( remaining <= 0 )) && break
+  sleep "$(( remaining < PACE_SECONDS ? remaining : PACE_SECONDS ))"
 done
 
-printf 'Fallback complete: launched %d fresh Pi sessions; total campaign cap was %d iterations.\n' "$REMAINING_ITERATIONS" "$TOTAL_ITERATIONS"
+printf 'Ralph complete: launched %d fresh Pi sessions over 24 hours.\n' "$ITERATION"

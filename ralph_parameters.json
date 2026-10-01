@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "purpose": "Validated starting parameters for the DDLS microscope Ralph loop",
+  "purpose": "Validated starting parameters for the DDLS microscope Ralph loop (24-hour campaign)",
   "source": "survey_frames/optimization/plate_A/well_B11/optimization_analysis.json",
   "scope": {
     "validated_well": "B11",
