@@ -17,6 +17,7 @@ FRAME_DIRS = (ROOT / "frames", ROOT / "images", ROOT / "survey_frames")
 THUMB_DIRS = (ROOT / "frames", ROOT / "thumbs", ROOT / "survey_frames")
 PROGRESS_PATH = ROOT / "RALPH_PROGRESS.md"
 QUESTIONS_PATH = ROOT / "OPEN_QUESTIONS.md"
+STATE_PATH = ROOT / "STATE.json"
 
 app = FastAPI(title="Pond-water Ralph dashboard")
 
@@ -119,12 +120,24 @@ def ranked_hypotheses() -> list[dict[str, str]]:
     return [{"rank": "Rank 1", "text": "Repeated BF fields may reproduce the dense aggregate pattern and an elongated ~37.6 µm candidate; evidence remains insufficient to distinguish cyanobacteria-like dominance from a mixed phototrophic community."}]
 
 
+def discovery_iteration_count(progress: list[str]) -> int:
+    """Prefer authoritative discovery state; retain the legacy fallback otherwise."""
+    if STATE_PATH.exists():
+        try:
+            state = json.loads(STATE_PATH.read_text(encoding="utf-8"))
+            if state.get("phase") == "discovery":
+                return int(state.get("successful_discovery_cycles", 0))
+        except (OSError, json.JSONDecodeError, TypeError, ValueError):
+            pass
+    return sum(1 for entry in progress if re.search(r"iteration", entry, re.IGNORECASE))
+
+
 def dashboard_data() -> dict[str, Any]:
     frames = all_pngs(FRAME_DIRS)
     thumbs = all_pngs(THUMB_DIRS, thumbnails=True)
     latest = newest(thumbs)
     progress = progress_blocks()
-    return {"frame_count": len(frames), "thumbnail_count": len(thumbs), "iteration_count": sum(1 for entry in progress if re.search(r"iteration", entry, re.IGNORECASE)), "latest_update": progress[-1][:80] if progress else "—", "latest_thumbnail": str(latest.relative_to(ROOT)) if latest else None, "latest_thumbnail_mtime": latest.stat().st_mtime_ns if latest else None, "hypotheses": ranked_hypotheses(), "progress_entries": [{"label": f"Entry {i}", "text": entry} for i, entry in enumerate(progress[-5:], 1)]}
+    return {"frame_count": len(frames), "thumbnail_count": len(thumbs), "iteration_count": discovery_iteration_count(progress), "progress_count": len(progress), "latest_update": progress[-1][:80] if progress else "—", "latest_thumbnail": str(latest.relative_to(ROOT)) if latest else None, "latest_thumbnail_mtime": latest.stat().st_mtime_ns if latest else None, "hypotheses": ranked_hypotheses(), "progress_entries": [{"label": f"Entry {i}", "text": entry} for i, entry in enumerate(progress[-5:], 1)]}
 
 
 @app.get("/", response_class=HTMLResponse)
